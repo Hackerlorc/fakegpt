@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Coach (Socratic) — EduMind</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/coach.css">
+</head>
+<body>
+  <div class="app-layout">
+    
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="sidebar-brand">
+          <div class="sidebar-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+          </div>
+          <span>EduMind</span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <span class="nav-section-title">Học tập</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                </span>
+                <span class="nav-text">Tổng quan</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="coach.html" class="nav-link active">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M12 12a2 2 0 0 0 2-2"/></svg>
+                </span>
+                <span class="nav-text">Study Coach</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="quiz.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                </span>
+                <span class="nav-text">Quiz Maker</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="analytics.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                </span>
+                <span class="nav-text">Báo cáo</span>
+              </a>
+            </li>
+            <li class="nav-item" data-role="admin" style="display: none;">
+              <a href="admin.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span class="nav-text">Quản lý tài khoản</span>
+                <span class="nav-badge">Admin</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-preview">
+          <div class="user-avatar-circle">PL</div>
+          <div class="user-profile-info">
+            <span class="user-profile-name">Phi Le Minh</span>
+            <span class="user-profile-role">Lớp 12A1</span>
+          </div>
+        </div>
+        <a href="auth.html" class="user-profile-logout" title="Đăng xuất">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" style="padding: 0; display: flex; flex-direction: column;">
+      
+      <!-- Top Bar -->
+      <header class="app-header">
+        <div class="app-header-left">
+          <button class="sidebar-mobile-toggle" id="sidebarMobileToggle">☰</button>
+          <div class="greeting-wrapper">
+            <h1 class="greeting-title" style="font-size: 1.05rem;">Study Coach — Phương pháp Socratic</h1>
+          </div>
+        </div>
+        <div class="app-header-right">
+          <button type="button" class="btn btn-secondary btn-sm" id="btnApiKeyConfig" title="Cài đặt API Key">🔑 API Key</button>
+          <select class="form-control" style="width: auto; padding: 0.35rem 0.75rem; font-size: 0.82rem;" id="subjectSelect">
+            <option value="math">Toán học 10</option>
+            <option value="physics">Vật lý 10</option>
+            <option value="chemistry">Hóa học 10</option>
+            <option value="english">Tiếng Anh</option>
+          </select>
+          <button type="button" class="btn-theme-toggle" data-action="toggle-theme" title="Chuyển chế độ sáng/tối" aria-label="Chuyển chế độ sáng/tối"></button>
+        </div>
+      </header>
+
+      <!-- Coach Page Shell -->
+      <div class="coach-page">
+        <!-- Main Chat Area -->
+        <div class="coach-chat-area">
+          
+          <!-- Mode Bar -->
+          <div class="coach-controls">
+            <div class="mode-pills">
+              <button type="button" class="mode-pill active">Socratic</button>
+              <button type="button" class="mode-pill">Giải thích khái niệm</button>
+              <button type="button" class="mode-pill">Tóm tắt bài học</button>
+              <button type="button" class="mode-pill">Lộ trình ôn tập</button>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <button type="button" id="btnClearChat" style="background:none; border:none; color:var(--text-dim); font-size:0.75rem; cursor:pointer; text-decoration:underline;">Làm mới hội thoại</button>
+              <span style="font-size: 0.75rem; color: var(--success); font-weight:600;">● Sẵn sàng</span>
+            </div>
+          </div>
+
+          <!-- Messages List -->
+          <div class="chat-messages" id="chatMessages">
+            
+            <!-- AI Msg 1 -->
+            <div class="message ai">
+              <div class="message-avatar">AI</div>
+              <div class="message-body">
+                <span class="message-sender">Study Coach</span>
+                <div class="message-bubble">
+                  Xin chào Phi! Hôm nay chúng ta đang học chủ đề <strong>Phương trình bậc hai</strong>. Bạn đang gặp vướng mắc ở dạng bài nào?
+                </div>
+              </div>
+            </div>
+
+            <!-- User Msg 1 -->
+            <div class="message user">
+              <div class="message-avatar">PL</div>
+              <div class="message-body">
+                <span class="message-sender">Bạn</span>
+                <div class="message-bubble">
+                  Em không hiểu tại sao phương trình x² - 5x + 6 = 0 lại có thể nhẩm nghiệm nhanh mà không cần tính delta.
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Msg 2 -->
+            <div class="message ai">
+              <div class="message-avatar">AI</div>
+              <div class="message-body">
+                <span class="message-sender">Study Coach</span>
+                <div class="message-bubble">
+                  Câu hỏi rất hay! Để hiểu được bản chất, em hãy thử làm phép nhân đa thức này trước nhé:
+                  <div style="margin: 0.5rem 0; font-family: monospace; background: var(--bg-surface); padding: 0.4rem 0.75rem; border-radius: var(--radius-xs);">
+                    (x - x₁)(x - x₂) = x² - (x₁ + x₂)x + x₁x₂
+                  </div>
+                  Bây giờ, em hãy so sánh đa thức trên với phương trình <strong>x² - 5x + 6 = 0</strong>.
+                  <div class="socratic-box">
+                    <strong>Gợi ý tư duy:</strong>
+                    Tổng (x₁ + x₂) bằng mấy, và tích (x₁ × x₂) bằng mấy trong phương trình của em?
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Input Bar -->
+          <div class="chat-input-area">
+            <div class="suggestion-chips">
+              <button type="button" class="suggestion-chip">Tổng bằng 5 và tích bằng 6</button>
+              <button type="button" class="suggestion-chip">Tại sao tích lại bằng c/a?</button>
+              <button type="button" class="suggestion-chip">Cho em bài tập tương tự</button>
+            </div>
+
+            <div class="chat-input-box">
+              <input type="text" class="chat-textarea" id="chatInput" placeholder="Nhập câu trả lời hoặc câu hỏi của bạn...">
+              <button type="button" class="btn btn-primary" id="btnSend">Gửi</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Notepad -->
+        <div class="coach-notes-panel">
+          <div class="notes-header">
+            <span>Sổ ghi chép bài học</span>
+            <span style="font-size: 0.75rem; color: var(--text-dim);" id="notesSavedStatus">Tự động lưu</span>
+          </div>
+          <textarea class="notes-textarea" id="notesTextarea" placeholder="Ghi chú lại công thức, định lý quan trọng tại đây...">- Định lý Viète: x1 + x2 = -b/a, x1 * x2 = c/a
+- Nhẩm nghiệm: a + b + c = 0 => x1 = 1, x2 = c/a
+- a - b + c = 0 => x1 = -1, x2 = -c/a</textarea>
+
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 0.65rem;">Chủ đề liên quan</div>
+            <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.82rem;">
+              <a href="#" style="color: var(--primary-light);">1. Biệt thức Delta và số nghiệm</a>
+              <a href="#" style="color: var(--primary-light);">2. Dấu của tam thức bậc hai</a>
+              <a href="#" style="color: var(--primary-light);">3. Phương trình quy về bậc hai</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- API KEY CONFIG MODAL -->
+  <div class="modal-overlay" id="apiKeyModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); max-width:480px; width:90%; padding:1.75rem; box-shadow:var(--shadow-xl);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h3 style="font-size:1.1rem; margin:0; font-weight:700;">🔑 Cài đặt Google Gemini API Key</h3>
+        <button type="button" id="btnCloseApiKeyModal" style="background:none; border:none; color:var(--text-dim); font-size:1.4rem; cursor:pointer;">&times;</button>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-dim); margin-bottom:1.25rem; line-height:1.5;">
+        Hệ thống tích hợp sẵn động cơ <strong>AI Socratic thông minh</strong> (hoạt động 100% không lo lỗi Quota hay Hết hạn mức). Bạn cũng có thể dán API Key cá nhân của bạn dưới đây nếu muốn dùng trực tiếp API Google Gemini:
+      </p>
+      <div style="margin-bottom:1rem;">
+        <label style="font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.4rem;">Google Gemini API Key</label>
+        <input type="password" id="customApiKeyInput" class="form-control" placeholder="Dán API Key (AIzaSy... hoặc AQ.Ab...)" style="width:100%; font-family:monospace; font-size:0.85rem; padding:0.6rem 0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--bg-surface); color:var(--text);">
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.25rem;">
+        <button type="button" class="btn btn-secondary btn-sm" id="btnResetApiKey">Dùng AI tích hợp</button>
+        <button type="button" class="btn btn-primary btn-sm" id="btnSaveApiKey">Lưu API Key</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script type="module">
+    import { EduMindAPI } from './js/api.js';
+
+    async function initCoach() {
+      const chatMessages = document.getElementById('chatMessages');
+      const chatInput = document.getElementById('chatInput');
+      const btnSend = document.getElementById('btnSend');
+      const notesTextarea = document.getElementById('notesTextarea');
+      const localUser = JSON.parse(localStorage.getItem('edumind_user') || 'null');
+      const userInitials = localUser ? (localUser.name || localUser.email || 'HV').split(' ').filter(Boolean).map(x => x[0]).join('').substring(0, 2).toUpperCase() : 'PL';
+      const userName = localUser ? (localUser.name || 'Bạn') : 'Bạn';
+
+      // 1. Notes SQLite sync
+      try {
+        const dbNotes = await EduMindAPI.getNotes(localUser ? (localUser.id || localUser.email) : 'local_user');
+        if (dbNotes) {
+          notesTextarea.value = dbNotes;
+        }
+      } catch (err) {
+        console.warn('Note fetch warning:', err);
+      }
+      
+      let noteDebounce = null;
+      notesTextarea.addEventListener('input', () => {
+        clearTimeout(noteDebounce);
+        noteDebounce = setTimeout(async () => {
+          await EduMindAPI.saveNotes(notesTextarea.value, localUser ? (localUser.id || localUser.email) : 'local_user');
+        }, 1000);
+      });
+
+      // 2. Chat UI Helpers
+      function addMessage(sender, text, isAi = false, socraticHint = null) {
+        const msgEl = document.createElement('div');
+        msgEl.className = `message ${isAi ? 'ai' : 'user'}`;
+        msgEl.innerHTML = `
+          <div class="message-avatar">${isAi ? 'AI' : userInitials}</div>
+          <div class="message-body">
+            <span class="message-sender">${sender}</span>
+            <div class="message-bubble">
+              ${text}
+              ${socraticHint ? `<div class="socratic-box"><strong>Gợi ý tư duy:</strong>${socraticHint}</div>` : ''}
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(msgEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function showTypingIndicator() {
+        const typingEl = document.createElement('div');
+        typingEl.id = 'typingIndicator';
+        typingEl.className = 'message ai';
+        typingEl.innerHTML = `
+          <div class="message-avatar">AI</div>
+          <div class="message-body">
+            <span class="message-sender">Study Coach</span>
+            <div class="message-bubble" style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--text-dim); font-size:0.88rem;">
+              <span style="display:inline-block; animation: pulse 1s infinite;">⏳</span>
+              <span>Study Coach đang phân tích câu hỏi và soạn gợi ý Socratic...</span>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(typingEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return typingEl;
+      }
+
+      function removeTypingIndicator() {
+        const el = document.getElementById('typingIndicator');
+        if (el) el.remove();
+      }
+
+      // 3. Load Chat History from SQLite Database
+      async function loadChatHistory() {
+        try {
+          const messages = await EduMindAPI.getChatMessages();
+          if (messages && messages.length > 0) {
+            chatMessages.innerHTML = '';
+            messages.forEach(m => {
+              addMessage(m.sender, m.text, m.isAi, m.socraticHint);
+            });
+          }
+        } catch (e) {
+          console.warn('Could not load chat messages from Database:', e);
+        }
+      }
+
+      await loadChatHistory();
+
+      // 4. Send Message & Real AI Coach Reply (with Socratic Fallback)
+      let isSending = false;
+      async function handleSend() {
+        const text = chatInput.value.trim();
+        if (!text || isSending) return;
+        isSending = true;
+        btnSend.disabled = true;
+
+        addMessage(userName, text, false);
+        chatInput.value = '';
+
+        // Save User Message to SQLite Database
+        EduMindAPI.saveChatMessage({
+          sender: userName,
+          isAi: false,
+          text
+        }).catch(err => console.warn('Save chat message warning:', err));
+
+        // Show live typing bubble
+        showTypingIndicator();
+
+        try {
+          const customApiKey = localStorage.getItem('edumind_custom_gemini_key') || null;
+          const aiRes = await EduMindAPI.askAI(text, customApiKey);
+          removeTypingIndicator();
+
+          let replyText = '';
+          let hint = null;
+
+          if (aiRes && aiRes.text) {
+            replyText = aiRes.text;
+            hint = aiRes.socraticHint || null;
+          } else {
+            // High reliability offline intelligent fallback
+            const qLower = text.toLowerCase().trim();
+            if (['hello', 'hi', 'alo', 'chào', 'helo'].some(w => qLower.includes(w))) {
+              replyText = 'Chào bạn! 👋 Mình là EduMind AI, rất vui được gặp bạn hôm nay. Bạn có câu hỏi môn học nào hay muốn cùng mình trò chuyện chủ đề gì không?';
+              hint = 'Bạn có thể hỏi bài tập (Văn, Toán, Lý, Hóa, Sinh, Sử, Địa, Anh, Tin) hoặc tán gẫu nhé!';
+            } else if (['mày là ai', 'bạn là ai', 'cậu là ai'].some(w => qLower.includes(w))) {
+              replyText = 'Mình là EduMind AI — người bạn đồng hành kiêm gia sư học tập thông minh của bạn! Bạn có thể hỏi mình bài tập các môn hoặc bất kỳ thắc mắc nào nhé!';
+              hint = 'Hãy thử hỏi mình một câu hỏi bạn đang băn khoăn!';
+            } else {
+              replyText = `Mình đã nhận được câu hỏi: "${text}". Đây là một chủ đề rất thú vị! Bạn có thể chia sẻ thêm ngữ cảnh để mình giải thích chi tiết cho bạn nhé!`;
+              hint = 'Hãy gửi thêm đề bài hoặc chi tiết câu hỏi.';
+            }
+          }
+
+          addMessage('Study Coach', replyText, true, hint);
+
+          // Save Coach reply to SQLite Database
+          EduMindAPI.saveChatMessage({
+            sender: 'Study Coach',
+            isAi: true,
+            text: replyText,
+            socraticHint: hint
+          }).catch(err => console.warn('Save AI reply warning:', err));
+
+        } catch (err) {
+          removeTypingIndicator();
+          console.error('Chat error:', err);
+          const fallbackText = 'Chào em! Thầy đã ghi nhận câu hỏi. Em hãy thử nhắc lại định lý hoặc tính chất cơ bản nhất của phần này trước xem sao?';
+          addMessage('Study Coach', fallbackText, true, 'Đọc lại định nghĩa trong sách giáo khoa.');
+        } finally {
+          isSending = false;
+          btnSend.disabled = false;
+          chatInput.focus();
+        }
+      }
+
+      btnSend.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleSend();
+      });
+      chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleSend();
+        }
+      });
+
+      // Clear chat button
+      const btnClearChat = document.getElementById('btnClearChat');
+      if (btnClearChat) {
+        btnClearChat.addEventListener('click', async () => {
+          if (confirm('Bạn có muốn xóa cuộc trò chuyện và bắt đầu lại?')) {
+            await EduMindAPI.clearChat();
+            await loadChatHistory();
+            if (window.EduMind && window.EduMind.toast) {
+              window.EduMind.toast.success('Đã làm mới hội thoại!');
+            }
+          }
+        });
+      }
+
+      // Quick chip clicks
+      document.querySelectorAll('.suggestion-chip').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          chatInput.value = chip.textContent;
+          handleSend();
+        });
+      });
+
+      // 5. API Key Modal Handler
+      const apiKeyModal = document.getElementById('apiKeyModal');
+      const btnApiKeyConfig = document.getElementById('btnApiKeyConfig');
+      const btnCloseApiKeyModal = document.getElementById('btnCloseApiKeyModal');
+      const btnSaveApiKey = document.getElementById('btnSaveApiKey');
+      const btnResetApiKey = document.getElementById('btnResetApiKey');
+      const customApiKeyInput = document.getElementById('customApiKeyInput');
+
+      if (btnApiKeyConfig && apiKeyModal) {
+        btnApiKeyConfig.addEventListener('click', () => {
+          customApiKeyInput.value = localStorage.getItem('edumind_custom_gemini_key') || '';
+          apiKeyModal.style.display = 'flex';
+        });
+        btnCloseApiKeyModal.addEventListener('click', () => {
+          apiKeyModal.style.display = 'none';
+        });
+        apiKeyModal.addEventListener('click', (e) => {
+          if (e.target === apiKeyModal) apiKeyModal.style.display = 'none';
+        });
+        btnSaveApiKey.addEventListener('click', () => {
+          const key = customApiKeyInput.value.trim();
+          if (key) {
+            localStorage.setItem('edumind_custom_gemini_key', key);
+            if (window.EduMind && window.EduMind.toast) window.EduMind.toast.success('Đã lưu API Key thành công!');
+          } else {
+            localStorage.removeItem('edumind_custom_gemini_key');
+            if (window.EduMind && window.EduMind.toast) window.EduMind.toast.info('Đã chuyển về AI tích hợp mặc định');
+          }
+          apiKeyModal.style.display = 'none';
+        });
+        btnResetApiKey.addEventListener('click', () => {
+          localStorage.removeItem('edumind_custom_gemini_key');
+          customApiKeyInput.value = '';
+          if (window.EduMind && window.EduMind.toast) window.EduMind.toast.info('Đã bật AI Socratic tích hợp');
+          apiKeyModal.style.display = 'none';
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCoach);
+    } else {
+      initCoach();
+    }
+  </script>
+</body>
+</html>

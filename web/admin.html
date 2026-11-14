@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý tài khoản — EduMind Admin</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="app-layout">
+    
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ==========================================================================
+         SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="sidebar-brand">
+          <div class="sidebar-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+          </div>
+          <span>EduMind</span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <span class="nav-section-title">Học tập</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                </span>
+                <span class="nav-text">Tổng quan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="coach.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M12 12a2 2 0 0 0 2-2"/></svg>
+                </span>
+                <span class="nav-text">Study Coach</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="quiz.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                </span>
+                <span class="nav-text">Quiz Maker</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="analytics.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                </span>
+                <span class="nav-text">Báo cáo</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-section-title">Hệ thống & Quản trị</span>
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="admin.html" class="nav-link active">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span class="nav-text">Quản lý tài khoản</span>
+                <span class="nav-badge">Admin</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                </span>
+                <span class="nav-text">Tài liệu</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </span>
+                <span class="nav-text">Cài đặt</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-preview">
+          <div class="user-avatar-circle" style="background-color: var(--primary);">AD</div>
+          <div class="user-profile-info">
+            <span class="user-profile-name">Quản trị viên</span>
+            <span class="user-profile-role">admin@edumind.ai</span>
+          </div>
+        </div>
+        <a href="auth.html" class="user-profile-logout" title="Đăng xuất">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT
+         ========================================================================== -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <header class="app-header">
+        <div class="app-header-left">
+          <button class="sidebar-mobile-toggle" id="sidebarMobileToggle">☰</button>
+          <div class="greeting-wrapper">
+            <h1 class="greeting-title" style="font-size: 1.05rem;">Quản trị hệ thống — Quản lý tài khoản</h1>
+          </div>
+        </div>
+        <div class="app-header-right">
+          <div class="firebase-status-pill" id="firebaseStatusPill" title="Trạng thái kết nối CSDL SQLite" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: var(--success-light);">
+            <span class="status-dot online"></span>
+            <span class="status-text">SQLite DB: edumind.db (Đang hoạt động)</span>
+          </div>
+          <button type="button" class="btn-theme-toggle" data-action="toggle-theme" title="Chuyển chế độ sáng/tối" aria-label="Chuyển chế độ sáng/tối"></button>
+        </div>
+      </header>
+
+      <div class="admin-container">
+        
+        <!-- KPI 4 Cards -->
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="admin-stat-meta">
+              <span class="admin-stat-label">Tổng số tài khoản</span>
+              <span class="admin-stat-value" id="kpiTotal">--</span>
+              <span class="admin-stat-sub" id="kpiTotalSub">Đồng bộ từ edumind.db</span>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon" style="color: var(--success-light);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="admin-stat-meta">
+              <span class="admin-stat-label">Đang hoạt động</span>
+              <span class="admin-stat-value" id="kpiActive">--</span>
+              <span class="admin-stat-sub" id="kpiActiveSub">Đang nạp...</span>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon" style="color: var(--warning-light);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div class="admin-stat-meta">
+              <span class="admin-stat-label">Gói Pro Learner</span>
+              <span class="admin-stat-value" id="kpiPro">--</span>
+              <span class="admin-stat-sub" id="kpiProSub">Đang nạp...</span>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon" style="color: var(--danger-light);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div class="admin-stat-meta">
+              <span class="admin-stat-label">Đang bị khóa</span>
+              <span class="admin-stat-value" id="kpiLocked">--</span>
+              <span class="admin-stat-sub" id="kpiLockedSub">Đang nạp...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters & Actions Toolbar -->
+        <div class="admin-toolbar">
+          <div class="admin-search-wrapper">
+            <span class="admin-search-icon">🔍</span>
+            <input type="text" class="admin-search-input" id="searchUserInput" placeholder="Tìm theo tên, email...">
+          </div>
+
+          <div class="admin-filter-group">
+            <select class="admin-select" id="filterRole">
+              <option value="all">Tất cả vai trò</option>
+              <option value="student">Học viên</option>
+              <option value="teacher">Giáo viên</option>
+              <option value="admin">Quản trị viên</option>
+            </select>
+
+            <select class="admin-select" id="filterStatus">
+              <option value="all">Tất cả trạng thái</option>
+              <option value="active">Hoạt động</option>
+              <option value="locked">Đã khóa</option>
+            </select>
+
+            <button type="button" class="btn btn-outline btn-sm" id="btnExportCSV">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              Xuất CSV
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-sm" id="btnRefreshDB" title="Làm mới toàn bộ danh sách tài khoản từ CSDL SQLite">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+              Làm mới CSDL
+            </button>
+
+            <button type="button" class="btn btn-primary btn-sm" id="btnOpenAddModal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Thêm tài khoản
+            </button>
+          </div>
+        </div>
+
+        <!-- SQLite Tables Status Bar -->
+        <div style="background-color: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.82rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <strong style="color: var(--text);">Cơ sở dữ liệu SQLite (edumind.db):</strong>
+            <span style="color: var(--text-dim);">📁 <code style="color: var(--primary-light);">users</code></span>
+            <span style="color: var(--text-dim);">📁 <code style="color: var(--primary-light);">quizzes</code></span>
+            <span style="color: var(--text-dim);">📁 <code style="color: var(--primary-light);">questions</code></span>
+            <span style="color: var(--text-dim);">📁 <code style="color: var(--primary-light);">quiz_attempts</code></span>
+            <span style="color: var(--text-dim);">📁 <code style="color: var(--primary-light);">knowledge_gaps</code></span>
+            <span style="color: var(--text-dim);">📁 <code style="color: var(--primary-light);">roadmaps</code></span>
+          </div>
+          <span style="color: var(--success-light); font-weight: 500;">✓ Kết nối trực tiếp qua REST API port 8080</span>
+        </div>
+
+        <!-- Accounts Table Card -->
+        <div class="admin-table-card">
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Người dùng</th>
+                  <th>Vai trò</th>
+                  <th>Gói học</th>
+                  <th>Trạng thái</th>
+                  <th>Hoạt động gần nhất</th>
+                  <th>Số quiz</th>
+                  <th style="text-align: right;">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="userTableBody">
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="admin-pagination">
+            <span id="paginationInfo">Hiển thị 1 đến 8 trên 8 tài khoản</span>
+            <div class="pagination-controls">
+              <button type="button" class="btn btn-outline btn-sm" disabled>Trước</button>
+              <button type="button" class="btn btn-primary btn-sm">1</button>
+              <button type="button" class="btn btn-outline btn-sm" disabled>Sau</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: THÊM NGƯỜI DÙNG MỚI
+       ========================================================================== -->
+  <div class="modal-overlay" id="addUserModal">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.15rem; color: var(--text);">Thêm tài khoản mới</h3>
+        <button type="button" class="btn btn-ghost btn-sm modal-close-btn">✕</button>
+      </div>
+
+      <form id="addUserForm">
+        <div class="form-group">
+          <label class="form-label">Họ và tên</label>
+          <input type="text" class="form-control" id="newUserName" placeholder="Ví dụ: Trần Minh Đức" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Địa chỉ Email</label>
+          <input type="email" class="form-control" id="newUserEmail" placeholder="duc.tran@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Mật khẩu khởi tạo</label>
+          <input type="password" class="form-control" id="newUserPassword" placeholder="Tối thiểu 6 ký tự" value="123456" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Vai trò</label>
+            <select class="form-control" id="newUserRole">
+              <option value="student">Học viên</option>
+              <option value="teacher">Giáo viên</option>
+              <option value="admin">Quản trị viên</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gói dịch vụ</label>
+            <select class="form-control" id="newUserPlan">
+              <option value="Free">Miễn phí (Free)</option>
+              <option value="Pro">Pro Learner</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline modal-close-btn">Hủy</button>
+          <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: CHỈNH SỬA TÀI KHOẢN
+       ========================================================================== -->
+  <div class="modal-overlay" id="editUserModal">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.15rem; color: var(--text);">Chỉnh sửa tài khoản</h3>
+        <button type="button" class="btn btn-ghost btn-sm modal-close-btn">✕</button>
+      </div>
+
+      <form id="editUserForm">
+        <input type="hidden" id="editUserId">
+
+        <div class="form-group">
+          <label class="form-label">Họ và tên</label>
+          <input type="text" class="form-control" id="editUserName" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email (Không đổi)</label>
+          <input type="email" class="form-control" id="editUserEmail" disabled style="opacity: 0.7;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Vai trò</label>
+            <select class="form-control" id="editUserRole">
+              <option value="student">Học viên</option>
+              <option value="teacher">Giáo viên</option>
+              <option value="admin">Quản trị viên</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gói dịch vụ</label>
+            <select class="form-control" id="editUserPlan">
+              <option value="Free">Miễn phí (Free)</option>
+              <option value="Pro">Pro Learner</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Trạng thái tài khoản</label>
+          <select class="form-control" id="editUserStatus">
+            <option value="active">Hoạt động bình thường</option>
+            <option value="locked">Khóa tài khoản</option>
+          </select>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline modal-close-btn">Hủy</button>
+          <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script type="module">
+    import { EduMindAPI } from './js/api.js';
+
+    async function initAdmin() {
+      // 0. RBAC Security Guard: Only users with role === 'admin' can access
+      const currentUser = JSON.parse(localStorage.getItem('edumind_user') || 'null');
+      const isAdmin = currentUser && (currentUser.role === 'admin' || currentUser.email === 'admin@edumind.ai');
+      
+      if (!isAdmin) {
+        document.body.innerHTML = `
+          <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg-dark, #0f172a); color: var(--text, #f8fafc); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; padding: 2rem;">
+            <div style="background: var(--bg-surface, #1e293b); border: 1px solid var(--border, #334155); border-radius: 12px; padding: 2.5rem; max-width: 480px; box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #ef4444;">Truy cập bị từ chối (403)</h2>
+              <p style="color: var(--text-muted, #94a3b8); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                Trang Quản trị hệ thống chỉ dành riêng cho tài khoản <strong>Quản trị viên (Admin)</strong>.<br>
+                Tài khoản hiện tại (${currentUser ? currentUser.email : 'chưa đăng nhập'}) không có quyền truy cập.
+              </p>
+              <div style="display: flex; gap: 0.75rem; justify-content: center;">
+                <a href="dashboard.html" style="padding: 0.65rem 1.25rem; background: #6366f1; color: white; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem;">Về Tổng quan học tập</a>
+                <a href="auth.html" style="padding: 0.65rem 1.25rem; background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem;">Đăng nhập quyền Admin</a>
+              </div>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const statusPill = document.getElementById('firebaseStatusPill');
+      const tableBody = document.getElementById('userTableBody');
+      const searchInput = document.getElementById('searchUserInput');
+      const filterRole = document.getElementById('filterRole');
+      const filterStatus = document.getElementById('filterStatus');
+
+      let users = [];
+
+      // Initial user loading from SQLite Database
+      async function loadUsersFromDB() {
+        if (statusPill) {
+          statusPill.innerHTML = '<span class="status-dot online"></span><span class="status-text">SQLite DB: edumind.db (Kết nối OK)</span>';
+        }
+
+        try {
+          users = await EduMindAPI.getUsers();
+        } catch (err) {
+          console.error("Database fetch error:", err);
+        }
+
+        updateStats();
+        renderTable();
+      }
+
+      function getInitials(name) {
+        return (name || '').split(' ').filter(Boolean).map(p => p[0]).join('').substring(0, 2).toUpperCase() || 'US';
+      }
+
+      function renderTable() {
+        const query = searchInput.value.toLowerCase().trim();
+        const role = filterRole.value;
+        const status = filterStatus.value;
+
+        const filtered = users.filter(u => {
+          const matchQuery = (u.name || '').toLowerCase().includes(query) || (u.email || '').toLowerCase().includes(query);
+          const matchRole = role === 'all' || u.role === role;
+          const matchStatus = status === 'all' || u.status === status;
+          return matchQuery && matchRole && matchStatus;
+        });
+
+        tableBody.innerHTML = '';
+
+        if (!filtered.length) {
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="7" style="text-align: center; padding: 3rem; color: var(--text-dim);">
+                Không tìm thấy tài khoản nào trong Cơ sở dữ liệu phù hợp với bộ lọc.
+              </td>
+            </tr>
+          `;
+          document.getElementById('paginationInfo').textContent = 'Hiển thị 0 tài khoản';
+          return;
+        }
+
+        filtered.forEach(u => {
+          const tr = document.createElement('tr');
+          
+          let roleBadge = '<span class="role-badge">Học viên</span>';
+          if (u.role === 'teacher') roleBadge = '<span class="role-badge teacher">Giáo viên</span>';
+          if (u.role === 'admin') roleBadge = '<span class="role-badge admin">Quản trị viên</span>';
+
+          const statusBadge = u.status === 'active' 
+            ? '<span class="status-pill status-active"><span style="width:5px; height:5px; border-radius:50%; background:currentColor;"></span> Hoạt động</span>'
+            : '<span class="status-pill status-locked"><span style="width:5px; height:5px; border-radius:50%; background:currentColor;"></span> Đã khóa</span>';
+
+          const planBadge = u.plan === 'Pro'
+            ? '<span class="badge badge-primary">Pro</span>'
+            : '<span class="badge badge-secondary" style="color:var(--text-dim); border-color:var(--border);">Free</span>';
+
+          tr.innerHTML = `
+            <td>
+              <div class="user-cell">
+                <div class="user-cell-avatar">${getInitials(u.name || u.email)}</div>
+                <div class="user-cell-info">
+                  <span class="user-cell-name">${u.name || 'Người dùng'}</span>
+                  <span class="user-cell-email">${u.email || ''}</span>
+                </div>
+              </div>
+            </td>
+            <td>${roleBadge}</td>
+            <td>${planBadge}</td>
+            <td>${statusBadge}</td>
+            <td style="color: var(--text-dim); font-size: 0.82rem;">${u.last_active || u.lastActive || 'Hôm nay'}</td>
+            <td><strong>${u.quizzes || 0}</strong> <span style="font-size: 0.75rem; color: var(--text-dim);">bài</span></td>
+            <td style="text-align: right;">
+              <div class="table-actions" style="justify-content: flex-end;">
+                <button type="button" class="btn-icon-action btn-edit" data-id="${u.id}" title="Chỉnh sửa">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+                <button type="button" class="btn-icon-action btn-lock" data-id="${u.id}" title="${u.status === 'active' ? 'Khóa tài khoản' : 'Mở khóa'}">
+                  ${u.status === 'active'
+                    ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>'
+                    : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>'}
+                </button>
+                <button type="button" class="btn-icon-action danger btn-delete" data-id="${u.id}" title="Xóa khỏi Database">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </button>
+              </div>
+            </td>
+          `;
+          tableBody.appendChild(tr);
+        });
+
+        document.getElementById('paginationInfo').textContent = `Hiển thị 1 đến ${filtered.length} trên ${users.length} tài khoản`;
+      }
+
+      function updateStats() {
+        const total = users.length;
+        const active = users.filter(u => u.status === 'active').length;
+        const pro = users.filter(u => u.plan === 'Pro').length;
+        const locked = users.filter(u => u.status === 'locked').length;
+
+        document.getElementById('kpiTotal').textContent = total.toLocaleString();
+        document.getElementById('kpiActive').textContent = active.toLocaleString();
+        document.getElementById('kpiPro').textContent = pro.toLocaleString();
+        document.getElementById('kpiLocked').textContent = locked.toLocaleString();
+
+        const activePercent = total > 0 ? Math.round((active / total) * 100) : 0;
+        const proPercent = total > 0 ? Math.round((pro / total) * 100) : 0;
+        
+        const elActiveSub = document.getElementById('kpiActiveSub');
+        const elProSub = document.getElementById('kpiProSub');
+        const elLockedSub = document.getElementById('kpiLockedSub');
+        const elTotalSub = document.getElementById('kpiTotalSub');
+
+        if (elActiveSub) elActiveSub.textContent = `Tỷ lệ hoạt động: ${activePercent}%`;
+        if (elProSub) elProSub.textContent = `Tỷ lệ gói Pro: ${proPercent}%`;
+        if (elLockedSub) elLockedSub.textContent = locked > 0 ? `${locked} tài khoản bị khóa` : 'Không có tài khoản bị khóa';
+        if (elTotalSub) elTotalSub.textContent = `Đồng bộ từ edumind.db`;
+      }
+
+      // Live Filtering
+      searchInput.addEventListener('input', renderTable);
+      filterRole.addEventListener('change', renderTable);
+      filterStatus.addEventListener('change', renderTable);
+
+      // Add User Modal
+      const addModal = document.getElementById('addUserModal');
+      const btnOpenAddModal = document.getElementById('btnOpenAddModal');
+      const addUserForm = document.getElementById('addUserForm');
+
+      btnOpenAddModal.addEventListener('click', () => {
+        addModal.classList.add('active', 'open');
+      });
+
+      addUserForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = addUserForm.querySelector('button[type="submit"]');
+        const origText = submitBtn.textContent;
+        submitBtn.textContent = 'Đang lưu vào Database...';
+        submitBtn.disabled = true;
+
+        const newUser = {
+          name: document.getElementById('newUserName').value.trim(),
+          email: document.getElementById('newUserEmail').value.trim(),
+          password: document.getElementById('newUserPassword').value.trim(),
+          role: document.getElementById('newUserRole').value,
+          plan: document.getElementById('newUserPlan').value,
+          status: 'active'
+        };
+
+        // Save to SQLite Database
+        const res = await EduMindAPI.addUser(newUser);
+
+        if (res.success) {
+          addModal.classList.remove('active', 'open');
+          addUserForm.reset();
+          await loadUsersFromDB();
+          if (window.EduMind && window.EduMind.toast) {
+            window.EduMind.toast.success(`Đã lưu tài khoản "${newUser.name}" vào CSDL edumind.db!`);
+          }
+        } else {
+          alert('Lỗi lưu CSDL: ' + (res.error || 'Vui lòng thử lại'));
+        }
+        submitBtn.textContent = origText;
+        submitBtn.disabled = false;
+      });
+
+      // Edit User Modal
+      const editModal = document.getElementById('editUserModal');
+      const editUserForm = document.getElementById('editUserForm');
+
+      tableBody.addEventListener('click', async (e) => {
+        const editBtn = e.target.closest('.btn-edit');
+        const lockBtn = e.target.closest('.btn-lock');
+        const deleteBtn = e.target.closest('.btn-delete');
+
+        if (editBtn) {
+          const id = editBtn.getAttribute('data-id');
+          const user = users.find(u => u.id === id);
+          if (user) {
+            document.getElementById('editUserId').value = user.id;
+            document.getElementById('editUserName').value = user.name;
+            document.getElementById('editUserEmail').value = user.email;
+            document.getElementById('editUserRole').value = user.role;
+            document.getElementById('editUserPlan').value = user.plan;
+            document.getElementById('editUserStatus').value = user.status;
+            editModal.classList.add('active', 'open');
+          }
+        }
+
+        if (lockBtn) {
+          const id = lockBtn.getAttribute('data-id');
+          const user = users.find(u => u.id === id);
+          if (user) {
+            await EduMindAPI.toggleUserLock(user.id, user.status);
+            await loadUsersFromDB();
+            if (window.EduMind && window.EduMind.toast) {
+              window.EduMind.toast.info(`Tài khoản ${user.name} đã được ${user.status === 'active' ? 'khóa' : 'mở khóa'} trong Database.`);
+            }
+          }
+        }
+
+        if (deleteBtn) {
+          const id = deleteBtn.getAttribute('data-id');
+          const user = users.find(u => u.id === id);
+          if (user && confirm(`Bạn có chắc chắn muốn xóa vĩnh viễn tài khoản "${user.name}" (${user.email}) khỏi Database?`)) {
+            await EduMindAPI.deleteUser(user.id);
+            await loadUsersFromDB();
+            if (window.EduMind && window.EduMind.toast) {
+              window.EduMind.toast.error(`Đã xóa tài khoản "${user.name}" khỏi SQLite edumind.db.`);
+            }
+          }
+        }
+      });
+
+      editUserForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('editUserId').value;
+        const updated = {
+          name: document.getElementById('editUserName').value.trim(),
+          role: document.getElementById('editUserRole').value,
+          plan: document.getElementById('editUserPlan').value,
+          status: document.getElementById('editUserStatus').value
+        };
+
+        // Update in SQLite Database
+        await EduMindAPI.updateUser(id, updated);
+        await loadUsersFromDB();
+        editModal.classList.remove('active', 'open');
+        if (window.EduMind && window.EduMind.toast) {
+          window.EduMind.toast.success(`Đã cập nhật tài khoản vào Database!`);
+        }
+      });
+
+      // Export CSV
+      document.getElementById('btnExportCSV').addEventListener('click', () => {
+        const headers = ['ID,Họ và tên,Email,Vai trò,Gói,Trạng thái,Số quiz,Chuỗi streak'];
+        const rows = users.map(u => `"${u.id}","${u.name}","${u.email}","${u.role}","${u.plan}","${u.status}",${u.quizzes || 0},${u.streak || 0}`);
+        const csvContent = '\uFEFF' + [headers, ...rows].join('\n');
+        
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', `edumind_sqlite_users_${new Date().toISOString().slice(0, 10)}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        if (window.EduMind && window.EduMind.toast) {
+          window.EduMind.toast.success('Đã tải xuống file CSV xuất từ SQLite Database!');
+        }
+      });
+
+      // Refresh SQLite Database
+      document.getElementById('btnRefreshDB')?.addEventListener('click', async () => {
+        const btn = document.getElementById('btnRefreshDB');
+        const origText = btn.innerHTML;
+        btn.innerHTML = '<span>Đang làm mới CSDL...</span>';
+        btn.disabled = true;
+
+        try {
+          await loadUsersFromDB();
+          btn.innerHTML = origText;
+          btn.disabled = false;
+          if (window.EduMind && window.EduMind.toast) {
+            window.EduMind.toast.success('Đã làm mới dữ liệu từ SQLite edumind.db!');
+          }
+        } catch (e) {
+          btn.innerHTML = origText;
+          btn.disabled = false;
+        }
+      });
+
+      // Close modals on cancel or backdrop click
+      document.querySelectorAll('.modal-close-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          addModal.classList.remove('active', 'open');
+          editModal.classList.remove('active', 'open');
+        });
+      });
+
+      // Run initial load
+      await loadUsersFromDB();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAdmin);
+    } else {
+      initAdmin();
+    }
+  </script>
+</body>
+</html>

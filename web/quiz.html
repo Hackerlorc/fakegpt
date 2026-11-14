@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Maker — EduMind</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <div class="app-layout">
+    
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="sidebar-brand">
+          <div class="sidebar-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+          </div>
+          <span>EduMind</span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <span class="nav-section-title">Học tập</span>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                </span>
+                <span class="nav-text">Tổng quan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="coach.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M12 12a2 2 0 0 0 2-2"/></svg>
+                </span>
+                <span class="nav-text">Study Coach</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="quiz.html" class="nav-link active">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                </span>
+                <span class="nav-text">Quiz Maker</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="analytics.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                </span>
+                <span class="nav-text">Báo cáo</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-section-title">Hệ thống</span>
+          <ul class="nav-list">
+            <li class="nav-item" data-role="admin" style="display: none;">
+              <a href="admin.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span class="nav-text">Quản lý tài khoản</span>
+                <span class="nav-badge">Admin</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-preview">
+          <div class="user-avatar-circle">PL</div>
+          <div class="user-profile-info">
+            <span class="user-profile-name">Phi Le Minh</span>
+            <span class="user-profile-role">Lớp 12A1</span>
+          </div>
+        </div>
+        <a href="auth.html" class="user-profile-logout" title="Đăng xuất">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <header class="app-header">
+        <div class="app-header-left">
+          <button class="sidebar-mobile-toggle" id="sidebarMobileToggle">☰</button>
+          <div class="greeting-wrapper">
+            <h1 class="greeting-title" style="font-size: 1.05rem;">Quiz Maker — Trích xuất đề thi từ PDF</h1>
+          </div>
+        </div>
+        <div class="app-header-right">
+          <span style="font-size: 0.8rem; color: var(--text-dim);">Hỗ trợ: PDF, DOCX, TXT</span>
+          <button type="button" class="btn-theme-toggle" data-action="toggle-theme" title="Chuyển chế độ sáng/tối" aria-label="Chuyển chế độ sáng/tối"></button>
+        </div>
+      </header>
+
+      <div class="quiz-container">
+        
+        <!-- Tabs Bar -->
+        <div class="quiz-tabs">
+          <button type="button" class="quiz-tab-btn active" data-tab="tabCreate">Tạo Quiz mới</button>
+          <button type="button" class="quiz-tab-btn" data-tab="tabPractice">Làm bài kiểm tra</button>
+          <button type="button" class="quiz-tab-btn" data-tab="tabHistory">Lịch sử làm bài</button>
+        </div>
+
+        <!-- Tab 1: Create Quiz -->
+        <div class="tab-pane active" id="tabCreate">
+          <div class="quiz-creator-grid">
+            
+            <!-- Upload Box -->
+            <div>
+              <div class="upload-zone" id="dropzone">
+                <div class="upload-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/>
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-weight: 600; font-size: 0.95rem; color: var(--text);">Kéo thả file PDF vào đây</div>
+                  <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">hoặc nhấp chuột để chọn tệp từ máy tính</div>
+                </div>
+                <input type="file" id="fileInput" accept=".pdf,.docx,.txt" style="display: none;">
+              </div>
+
+              <!-- Uploaded file display -->
+              <div class="uploaded-file-card" id="filePreview" style="display: none;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <div style="color: var(--primary-light); font-weight: 600;">PDF</div>
+                  <div>
+                    <div style="font-size: 0.88rem; font-weight: 600; color: var(--text);" id="fileName">Toan10_Chuong3.pdf</div>
+                    <div style="font-size: 0.75rem; color: var(--text-dim);" id="fileSize">2.4 MB</div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-ghost btn-sm" id="btnRemoveFile">✕</button>
+              </div>
+            </div>
+
+            <!-- Quiz Config -->
+            <div class="config-card">
+              <h3 style="font-size: 1rem; color: var(--text);">Cấu hình bài kiểm tra</h3>
+              
+              <div class="form-group">
+                <label class="form-label">Môn học</label>
+                <select class="form-control" id="quizSubject">
+                  <option value="math">Toán học</option>
+                  <option value="physics">Vật lý</option>
+                  <option value="chemistry">Hóa học</option>
+                  <option value="biology">Sinh học</option>
+                  <option value="english">Tiếng Anh</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Dạng câu hỏi</label>
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; margin-top: 0.35rem;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                    <input type="checkbox" checked> Trắc nghiệm
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                    <input type="checkbox"> Tự luận
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                    <input type="checkbox"> Điền từ
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <label class="form-label" style="margin: 0;">Số lượng câu</label>
+                  <strong style="color: var(--primary-light); font-size: 0.85rem;" id="sliderVal">10 câu</strong>
+                </div>
+                <input type="range" min="5" max="30" value="10" class="form-control" id="quizCountSlider" style="padding: 0;">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Thời gian làm bài</label>
+                <select class="form-control">
+                  <option value="15">15 phút</option>
+                  <option value="30" selected>30 phút</option>
+                  <option value="45">45 phút</option>
+                  <option value="0">Không giới hạn</option>
+                </select>
+              </div>
+
+              <button type="button" class="btn btn-primary" id="btnGenerateQuiz" style="margin-top: 0.5rem;">
+                Tạo đề & Bắt đầu làm bài
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 2: Practice / Live Quiz -->
+        <div class="tab-pane" id="tabPractice">
+          <div class="quiz-header-bar">
+            <div>
+              <span class="badge badge-primary" id="quizSubjectBadge">Toán học 10</span>
+              <h3 style="font-size: 1.1rem; color: var(--text); margin-top: 0.25rem;" id="quizTitleHeading">Kiểm tra: Phương trình bậc hai & Viète</h3>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="quiz-timer" id="quizTimer">29:45</div>
+              <button type="button" class="btn btn-primary btn-sm" id="btnSubmitQuiz">Nộp bài</button>
+            </div>
+          </div>
+
+          <div class="question-card" id="questionCard">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 600;" id="questionProgress">CÂU HỎI 1 / 5</span>
+              <span class="badge badge-secondary" id="questionDifficulty">Độ khó: Trung bình</span>
+            </div>
+
+            <div class="question-title" id="questionTitle">
+              Đang tải câu hỏi từ Firebase Firestore...
+            </div>
+
+            <div class="answers-list" id="answersList">
+              <!-- Dynamically populated from Firestore questions -->
+            </div>
+
+            <div style="background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; font-size: 0.85rem; display: none;" id="explanationBox">
+              <strong style="color: var(--success-light); display: block; margin-bottom: 0.25rem;">Giải thích chi tiết:</strong>
+              <span id="explanationText"></span>
+            </div>
+
+            <div class="quiz-nav-footer">
+              <button type="button" class="btn btn-outline btn-sm" id="btnPrevQuestion">← Câu trước</button>
+              
+              <div class="question-dots" id="questionDotsContainer">
+                <!-- Dots populated dynamically -->
+              </div>
+
+              <button type="button" class="btn btn-primary btn-sm" id="btnNextQuestion">Câu kế tiếp →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: History -->
+        <div class="tab-pane" id="tabHistory">
+          <div class="history-card">
+            <table class="quiz-table">
+              <thead>
+                <tr>
+                  <th>Tên bài kiểm tra</th>
+                  <th>Môn học</th>
+                  <th>Số câu</th>
+                  <th>Điểm số</th>
+                  <th>Thời gian</th>
+                  <th>Ngày hoàn thành</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="quizHistoryBody">
+                <!-- Dynamically populated from Firebase Firestore quiz_attempts -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+  <script type="module">
+    import { EduMindAPI } from './js/api.js';
+
+    async function initQuizPage() {
+      // 1. Tab Switcher
+      const tabBtns = document.querySelectorAll('.quiz-tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      function switchTab(tabId) {
+        tabBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId));
+        tabPanes.forEach(pane => pane.classList.toggle('active', pane.id === tabId));
+        if (tabId === 'tabHistory') {
+          loadQuizHistory();
+        }
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
+      });
+
+      // 2. Upload simulation
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('fileInput');
+      const filePreview = document.getElementById('filePreview');
+      const btnRemoveFile = document.getElementById('btnRemoveFile');
+
+      dropzone.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length) {
+          document.getElementById('fileName').textContent = fileInput.files[0].name;
+          document.getElementById('fileSize').textContent = (fileInput.files[0].size / (1024 * 1024)).toFixed(1) + ' MB';
+          filePreview.style.display = 'flex';
+        }
+      });
+      btnRemoveFile.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fileInput.value = '';
+        filePreview.style.display = 'none';
+      });
+
+      const slider = document.getElementById('quizCountSlider');
+      slider.addEventListener('input', () => {
+        document.getElementById('sliderVal').textContent = slider.value + ' câu';
+      });
+
+      // 3. Quiz State & Player
+      let currentQuizzes = [];
+      let activeQuiz = null;
+      let currentQuestionIdx = 0;
+      let userAnswers = {};
+      let isSubmitted = false;
+      let timerInterval = null;
+      let secondsLeft = 30 * 60;
+
+      const quizSubjectBadge = document.getElementById('quizSubjectBadge');
+      const quizTitleHeading = document.getElementById('quizTitleHeading');
+      const questionProgress = document.getElementById('questionProgress');
+      const questionDifficulty = document.getElementById('questionDifficulty');
+      const questionTitle = document.getElementById('questionTitle');
+      const answersList = document.getElementById('answersList');
+      const explanationBox = document.getElementById('explanationBox');
+      const explanationText = document.getElementById('explanationText');
+      const questionDotsContainer = document.getElementById('questionDotsContainer');
+      const btnPrevQuestion = document.getElementById('btnPrevQuestion');
+      const btnNextQuestion = document.getElementById('btnNextQuestion');
+      const btnSubmitQuiz = document.getElementById('btnSubmitQuiz');
+      const quizTimer = document.getElementById('quizTimer');
+      const quizHistoryBody = document.getElementById('quizHistoryBody');
+
+      // Load quizzes from SQLite Database
+      async function initQuizzes() {
+        currentQuizzes = await EduMindAPI.getQuizzes();
+        if (currentQuizzes && currentQuizzes.length > 0) {
+          loadQuiz(currentQuizzes[0]);
+        }
+        loadQuizHistory();
+      }
+
+      function loadQuiz(quiz) {
+        activeQuiz = quiz;
+        currentQuestionIdx = 0;
+        userAnswers = {};
+        isSubmitted = false;
+        secondsLeft = (quiz.duration_minutes || quiz.durationMinutes || 30) * 60;
+        
+        quizSubjectBadge.textContent = `${quiz.subject} ${quiz.grade || ''}`;
+        quizTitleHeading.textContent = quiz.title;
+        questionDifficulty.textContent = `Độ khó: ${quiz.difficulty || 'Trung bình'}`;
+        explanationBox.style.display = 'none';
+        btnSubmitQuiz.disabled = false;
+        btnSubmitQuiz.textContent = 'Nộp bài';
+
+        startTimer();
+        renderQuestionDots();
+        renderCurrentQuestion();
+      }
+
+      function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+          if (secondsLeft <= 0 || isSubmitted) {
+            clearInterval(timerInterval);
+            return;
+          }
+          secondsLeft--;
+          const mins = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
+          const secs = String(secondsLeft % 60).padStart(2, '0');
+          quizTimer.textContent = `${mins}:${secs}`;
+        }, 1000);
+      }
+
+      function renderQuestionDots() {
+        questionDotsContainer.innerHTML = '';
+        if (!activeQuiz || !activeQuiz.questions) return;
+        
+        activeQuiz.questions.forEach((q, idx) => {
+          const dot = document.createElement('div');
+          dot.className = `q-dot ${idx === currentQuestionIdx ? 'active' : ''} ${userAnswers[idx] !== undefined ? 'done' : ''}`;
+          dot.textContent = idx + 1;
+          dot.addEventListener('click', () => {
+            currentQuestionIdx = idx;
+            renderCurrentQuestion();
+            renderQuestionDots();
+          });
+          questionDotsContainer.appendChild(dot);
+        });
+      }
+
+      function renderCurrentQuestion() {
+        if (!activeQuiz || !activeQuiz.questions || !activeQuiz.questions[currentQuestionIdx]) return;
+        const q = activeQuiz.questions[currentQuestionIdx];
+        const total = activeQuiz.questions.length;
+
+        questionProgress.textContent = `CÂU HỎI ${currentQuestionIdx + 1} / ${total}`;
+        questionTitle.textContent = q.text;
+        answersList.innerHTML = '';
+
+        const selectedOption = userAnswers[currentQuestionIdx];
+        const badges = ['A', 'B', 'C', 'D'];
+
+        q.options.forEach((optText, optIdx) => {
+          const optDiv = document.createElement('div');
+          let classNames = 'answer-option';
+
+          if (selectedOption === optIdx) {
+            classNames += ' selected';
+          }
+
+          if (isSubmitted) {
+            if (optIdx === q.correctIndex) {
+              classNames += ' correct';
+            } else if (selectedOption === optIdx && selectedOption !== q.correctIndex) {
+              classNames += ' incorrect';
+            }
+          }
+
+          optDiv.className = classNames;
+          optDiv.innerHTML = `
+            <div class="answer-badge">${badges[optIdx] || optIdx + 1}</div>
+            <span>${optText}</span>
+          `;
+
+          if (!isSubmitted) {
+            optDiv.addEventListener('click', () => {
+              userAnswers[currentQuestionIdx] = optIdx;
+              renderCurrentQuestion();
+              renderQuestionDots();
+            });
+          }
+
+          answersList.appendChild(optDiv);
+        });
+
+        if (isSubmitted && q.explanation) {
+          explanationBox.style.display = 'block';
+          explanationText.textContent = q.explanation;
+        } else {
+          explanationBox.style.display = 'none';
+        }
+
+        btnPrevQuestion.disabled = currentQuestionIdx === 0;
+        btnNextQuestion.textContent = currentQuestionIdx === total - 1 ? 'Xem lại toàn bộ' : 'Câu kế tiếp →';
+      }
+
+      btnPrevQuestion.addEventListener('click', () => {
+        if (currentQuestionIdx > 0) {
+          currentQuestionIdx--;
+          renderCurrentQuestion();
+          renderQuestionDots();
+        }
+      });
+
+      btnNextQuestion.addEventListener('click', () => {
+        if (!activeQuiz || !activeQuiz.questions) return;
+        if (currentQuestionIdx < activeQuiz.questions.length - 1) {
+          currentQuestionIdx++;
+          renderCurrentQuestion();
+          renderQuestionDots();
+        }
+      });
+
+      // Submit Quiz Action
+      btnSubmitQuiz.addEventListener('click', async () => {
+        if (!activeQuiz) return;
+        if (isSubmitted) {
+          alert('Bài kiểm tra này đã được nộp!');
+          return;
+        }
+
+        const totalQuestions = activeQuiz.questions.length;
+        const answeredCount = Object.keys(userAnswers).length;
+
+        if (answeredCount < totalQuestions) {
+          const proceed = confirm(`Bạn mới trả lời ${answeredCount}/${totalQuestions} câu. Bạn có chắc chắn muốn nộp bài?`);
+          if (!proceed) return;
+        }
+
+        isSubmitted = true;
+        clearInterval(timerInterval);
+
+        // Calculate score
+        let correctCount = 0;
+        activeQuiz.questions.forEach((q, idx) => {
+          if (userAnswers[idx] === q.correctIndex) {
+            correctCount++;
+          }
+        });
+
+        const score = Number(((correctCount / totalQuestions) * 10).toFixed(1));
+        const totalDuration = (activeQuiz.duration_minutes || activeQuiz.durationMinutes || 30) * 60;
+        const timeSpent = `${Math.floor((totalDuration - secondsLeft) / 60)}:${String((totalDuration - secondsLeft) % 60).padStart(2, '0')}`;
+
+        btnSubmitQuiz.textContent = `Đã nộp (${score}/10)`;
+        btnSubmitQuiz.disabled = true;
+
+        renderCurrentQuestion();
+        renderQuestionDots();
+
+        // Save Attempt to SQLite Database
+        const localUser = JSON.parse(localStorage.getItem('edumind_user') || 'null');
+        const attemptRecord = {
+          userId: localUser ? (localUser.id || localUser.email) : 'usr_009',
+          quizId: activeQuiz.id,
+          title: activeQuiz.title,
+          subject: activeQuiz.subject,
+          score,
+          total: 10,
+          correctCount,
+          timeSpent,
+          userAnswers
+        };
+
+        await EduMindAPI.saveQuizAttempt(attemptRecord);
+
+        if (window.EduMind && window.EduMind.toast) {
+          window.EduMind.toast.success(`Đã lưu kết quả vào CSDL SQLite: ${score}/10 điểm (${correctCount}/${totalQuestions} câu đúng)!`);
+        }
+
+        setTimeout(() => {
+          loadQuizHistory();
+        }, 800);
+      });
+
+      // 4. Generate Quiz from PDF
+      document.getElementById('btnGenerateQuiz').addEventListener('click', async () => {
+        const subjectSelect = document.getElementById('quizSubject');
+        const subjectText = subjectSelect.options[subjectSelect.selectedIndex].text;
+        const fileName = document.getElementById('fileName').textContent || 'TaiLieuOnTap.pdf';
+
+        const newQuiz = {
+          title: `Quiz trích xuất: ${fileName}`,
+          subject: subjectText,
+          grade: '12',
+          difficulty: 'Trung bình',
+          durationMinutes: 30,
+          questions: [
+            {
+              text: `[Câu hỏi từ ${fileName}] Khái niệm trọng tâm nào được đề cập trong phần đầu của tài liệu?`,
+              options: [
+                'A. Định nghĩa và các điều kiện nghiệm mở rộng',
+                'B. Các hệ quả ứng dụng thực tiễn',
+                'C. Bảng biến thiên và phân tích đồ thị',
+                'D. Bài toán tối ưu hóa đa mục tiêu'
+              ],
+              correctIndex: 0,
+              explanation: `Dựa vào cấu trúc tài liệu ${fileName}, phần đầu tập trung vào các định nghĩa tiên quyết và phương pháp giải cơ bản.`
+            },
+            {
+              text: `[Câu hỏi từ ${fileName}] Phương pháp nào được tối ưu nhất để giải bài toán trong chương này?`,
+              options: [
+                'A. Phương pháp đồ thị trực quan',
+                'B. Phương pháp Socratic từng bước tư duy',
+                'C. Phương pháp đại số rút gọn',
+                'D. Quy nạp toán học'
+              ],
+              correctIndex: 1,
+              explanation: 'Phương pháp Socratic từng bước giúp phát hiện lỗ hổng và giải thích nguồn gốc các công thức.'
+            }
+          ]
+        };
+
+        // Save to SQLite
+        const res = await EduMindAPI.createQuiz(newQuiz);
+        if (res.quiz) {
+          loadQuiz(res.quiz);
+          switchTab('tabPractice');
+          if (window.EduMind && window.EduMind.toast) {
+            window.EduMind.toast.success(`Đã tạo Quiz mới từ ${fileName} và lưu vào CSDL SQLite!`);
+          }
+        }
+      });
+
+      // 5. Load Quiz History from SQLite Database
+      async function loadQuizHistory() {
+        if (!quizHistoryBody) return;
+        const localUser = JSON.parse(localStorage.getItem('edumind_user') || 'null');
+        const userId = localUser ? (localUser.id || localUser.email) : null;
+        const attempts = await EduMindAPI.getQuizAttempts(userId);
+        
+        quizHistoryBody.innerHTML = '';
+        if (!attempts || !attempts.length) {
+          quizHistoryBody.innerHTML = `
+            <tr>
+              <td colspan="7" style="text-align: center; padding: 2.5rem; color: var(--text-dim);">
+                Chưa có lịch sử làm bài nào trong Cơ sở dữ liệu SQLite.
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        attempts.forEach(att => {
+          const tr = document.createElement('tr');
+          const scoreNum = parseFloat(att.score) || 0;
+          let scoreClass = 'score-high';
+          if (scoreNum < 6.5) scoreClass = 'score-low';
+          else if (scoreNum < 8.0) scoreClass = 'score-med';
+
+          tr.innerHTML = `
+            <td style="font-weight: 500;">${att.title}</td>
+            <td style="color: var(--text-dim);">${att.subject}</td>
+            <td>${att.correct_count !== undefined ? att.correct_count : 10}/${att.total || 10}</td>
+            <td><span class="score-badge ${scoreClass}">${scoreNum.toFixed(1)} / 10</span></td>
+            <td>${att.time_spent || att.timeSpent || '15:00'}</td>
+            <td style="color: var(--text-dim);">${att.completed_at || att.completedAt || 'Hôm nay'}</td>
+            <td>
+              <button type="button" class="btn btn-outline btn-sm btn-replay-quiz" data-id="${att.quiz_id || att.quizId}">Làm lại</button>
+            </td>
+          `;
+          quizHistoryBody.appendChild(tr);
+        });
+
+        // Replay button click
+        quizHistoryBody.querySelectorAll('.btn-replay-quiz').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const qid = btn.getAttribute('data-id');
+            const targetQuiz = currentQuizzes.find(q => q.id === qid) || activeQuiz;
+            if (targetQuiz) {
+              loadQuiz(targetQuiz);
+              switchTab('tabPractice');
+            }
+          });
+        });
+      }
+
+      // Initial execution
+      await initQuizzes();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initQuizPage);
+    } else {
+      initQuizPage();
+    }
+  </script>
+</body>
+</html>

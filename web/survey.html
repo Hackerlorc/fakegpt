@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khảo sát khởi tạo — EduMind</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/survey.css">
+</head>
+<body class="survey-layout">
+
+  <!-- Top Nav -->
+  <nav class="survey-nav">
+    <a href="index.html" class="landing-brand">
+      <div class="sidebar-logo-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+          <path d="M6 6h10"/>
+          <path d="M6 10h10"/>
+        </svg>
+      </div>
+      <span>EduMind</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <button type="button" class="btn-theme-toggle" data-action="toggle-theme" title="Chuyển chế độ sáng/tối" aria-label="Chuyển chế độ sáng/tối"></button>
+      <a href="dashboard.html" class="btn btn-ghost btn-sm">Bỏ qua khảo sát</a>
+    </div>
+  </nav>
+
+  <main class="survey-container">
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step-indicator active" id="indicator1">1</div>
+      <div class="step-indicator" id="indicator2">2</div>
+      <div class="step-indicator" id="indicator3">3</div>
+      <div class="step-indicator" id="indicator4">4</div>
+      <div class="step-indicator" id="indicator5">5</div>
+    </div>
+
+    <!-- Step 1: Grade Selection -->
+    <div class="survey-step" id="step1">
+      <div class="survey-step-header">
+        <span class="step-tag">Bước 1 trên 5</span>
+        <h1 class="survey-step-title">Bạn hiện đang học lớp mấy?</h1>
+        <p class="survey-step-subtitle">Giúp hệ thống điều chỉnh chương trình và độ khó câu hỏi phù hợp.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card selected" data-value="12">
+          <div class="option-icon">12</div>
+          <div class="option-info">
+            <span class="option-title">Lớp 12</span>
+            <span class="option-desc">Ôn thi tốt nghiệp & đại học</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="11">
+          <div class="option-icon">11</div>
+          <div class="option-info">
+            <span class="option-title">Lớp 11</span>
+            <span class="option-desc">Kiến thức nền tảng THPT</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="10">
+          <div class="option-icon">10</div>
+          <div class="option-info">
+            <span class="option-title">Lớp 10</span>
+            <span class="option-desc">Khởi đầu chương trình mới</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="thcs">
+          <div class="option-icon">9</div>
+          <div class="option-info">
+            <span class="option-title">Khối THCS</span>
+            <span class="option-desc">Lớp 6 đến lớp 9</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="uni">
+          <div class="option-icon">ĐH</div>
+          <div class="option-info">
+            <span class="option-title">Đại học / Cao đẳng</span>
+            <span class="option-desc">Tự học nâng cao</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="other">
+          <div class="option-icon">#</div>
+          <div class="option-info">
+            <span class="option-title">Khác</span>
+            <span class="option-desc">Học tập độc lập</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Subjects Selection -->
+    <div class="survey-step" id="step2" style="display: none;">
+      <div class="survey-step-header">
+        <span class="step-tag">Bước 2 trên 5</span>
+        <h1 class="survey-step-title">Chọn môn học bạn muốn rèn luyện</h1>
+        <p class="survey-step-subtitle">Có thể chọn nhiều môn học cùng lúc.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card selected" data-value="math">
+          <div class="option-icon">TO</div>
+          <div class="option-info"><span class="option-title">Toán học</span></div>
+        </div>
+        <div class="option-card selected" data-value="physics">
+          <div class="option-icon">LY</div>
+          <div class="option-info"><span class="option-title">Vật lý</span></div>
+        </div>
+        <div class="option-card" data-value="chemistry">
+          <div class="option-icon">HO</div>
+          <div class="option-info"><span class="option-title">Hóa học</span></div>
+        </div>
+        <div class="option-card" data-value="biology">
+          <div class="option-icon">SI</div>
+          <div class="option-info"><span class="option-title">Sinh học</span></div>
+        </div>
+        <div class="option-card" data-value="literature">
+          <div class="option-icon">VA</div>
+          <div class="option-info"><span class="option-title">Ngữ văn</span></div>
+        </div>
+        <div class="option-card" data-value="english">
+          <div class="option-icon">AN</div>
+          <div class="option-info"><span class="option-title">Tiếng Anh</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Main Goal -->
+    <div class="survey-step" id="step3" style="display: none;">
+      <div class="survey-step-header">
+        <span class="step-tag">Bước 3 trên 5</span>
+        <h1 class="survey-step-title">Mục tiêu học tập chính của bạn</h1>
+        <p class="survey-step-subtitle">Định hình lộ trình giải bài và cường độ đề thi.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card selected" data-value="exam">
+          <div class="option-icon">🎯</div>
+          <div class="option-info">
+            <span class="option-title">Đạt điểm cao kỳ thi tốt nghiệp / Đại học</span>
+            <span class="option-desc">Mục tiêu 8.5+ các môn chính</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="score">
+          <div class="option-icon">📈</div>
+          <div class="option-info">
+            <span class="option-title">Cải thiện điểm số trên lớp</span>
+            <span class="option-desc">Lấy lại kiến thức căn bản</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="deep">
+          <div class="option-icon">💡</div>
+          <div class="option-info">
+            <span class="option-title">Hiểu sâu bản chất định lý & công thức</span>
+            <span class="option-desc">Phương pháp Socratic tư duy logic</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="hsg">
+          <div class="option-icon">🏆</div>
+          <div class="option-info">
+            <span class="option-title">Luyện thi học sinh giỏi / Chuyên</span>
+            <span class="option-desc">Giải các bài toán vận dụng cao</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: Daily Study Time -->
+    <div class="survey-step" id="step4" style="display: none;">
+      <div class="survey-step-header">
+        <span class="step-tag">Bước 4 trên 5</span>
+        <h1 class="survey-step-title">Bạn có thể học bao lâu mỗi ngày?</h1>
+        <p class="survey-step-subtitle">Để xây dựng chuỗi học tập (streak) vừa sức và bền bỉ.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card" data-value="30m">
+          <div class="option-icon">30p</div>
+          <div class="option-info">
+            <span class="option-title">30 phút mỗi ngày</span>
+            <span class="option-desc">Ôn tập nhanh 1 chủ đề</span>
+          </div>
+        </div>
+        <div class="option-card selected" data-value="1h">
+          <div class="option-icon">1h</div>
+          <div class="option-info">
+            <span class="option-title">1 tiếng mỗi ngày</span>
+            <span class="option-desc">Lý tưởng để làm 1 quiz & trò chuyện cùng Coach</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="2h">
+          <div class="option-icon">2h</div>
+          <div class="option-info">
+            <span class="option-title">2 tiếng mỗi ngày</span>
+            <span class="option-desc">Chuyên tâm luyện đề và đào sâu kiến thức</span>
+          </div>
+        </div>
+        <div class="option-card" data-value="3h">
+          <div class="option-icon">3h+</div>
+          <div class="option-info">
+            <span class="option-title">Trên 3 tiếng</span>
+            <span class="option-desc">Giai đoạn nước rút ôn thi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5: Completed -->
+    <div class="survey-step" id="step5" style="display: none;">
+      <div class="survey-step-header" style="text-align: center; margin-bottom: 2.5rem;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background-color: var(--success-subtle); color: var(--success); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;">
+          ✓
+        </div>
+        <h1 class="survey-step-title">Hồ sơ học tập đã sẵn sàng!</h1>
+        <p class="survey-step-subtitle">Lộ trình học cá nhân hóa đã được thiết lập dựa trên lựa chọn của bạn.</p>
+      </div>
+
+      <div style="background-color: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: 0.88rem;">
+          <div>
+            <span style="color: var(--text-dim); display: block;">Khối lớp:</span>
+            <strong style="color: var(--text);">Lớp 12 (Ôn thi tốt nghiệp & ĐH)</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-dim); display: block;">Mục tiêu chính:</span>
+            <strong style="color: var(--text);">Đạt 8.5+ kỳ thi THPT</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-dim); display: block;">Môn ưu tiên:</span>
+            <strong style="color: var(--text);">Toán học, Vật lý</strong>
+          </div>
+          <div>
+            <span style="color: var(--text-dim); display: block;">Thời gian mục tiêu:</span>
+            <strong style="color: var(--text);">1 giờ / ngày</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="survey-actions">
+      <button type="button" class="btn btn-outline" id="btnPrev" style="visibility: hidden;">Quay lại</button>
+      <button type="button" class="btn btn-primary" id="btnNext">Tiếp tục</button>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script type="module">
+    import { EduMindAPI } from './js/api.js';
+
+    function initSurvey() {
+      let currentStep = 1;
+      const totalSteps = 5;
+
+      const btnNext = document.getElementById('btnNext');
+      const btnPrev = document.getElementById('btnPrev');
+
+      function updateUI() {
+        // Hide all steps
+        for (let i = 1; i <= totalSteps; i++) {
+          const stepEl = document.getElementById(`step${i}`);
+          const indEl = document.getElementById(`indicator${i}`);
+          if (stepEl) stepEl.style.display = i === currentStep ? 'block' : 'none';
+          if (indEl) {
+            indEl.classList.toggle('active', i === currentStep);
+            indEl.classList.toggle('completed', i < currentStep);
+          }
+        }
+
+        btnPrev.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+
+        if (currentStep === totalSteps) {
+          btnNext.textContent = 'Bắt đầu học ngay';
+        } else {
+          btnNext.textContent = 'Tiếp tục';
+        }
+      }
+
+      // Card selection toggle
+      document.querySelectorAll('.survey-step').forEach(step => {
+        step.querySelectorAll('.option-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const isMulti = step.id === 'step2';
+            if (!isMulti) {
+              step.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+              card.classList.add('selected');
+            } else {
+              card.classList.toggle('selected');
+            }
+          });
+        });
+      });
+
+      btnNext.addEventListener('click', async () => {
+        if (currentStep < totalSteps) {
+          currentStep++;
+          updateUI();
+        } else {
+          btnNext.textContent = 'Đang lưu...';
+          btnNext.disabled = true;
+
+          const surveyData = {
+            grade: document.querySelector('#step1 .option-card.selected')?.getAttribute('data-value') || '12',
+            subjects: Array.from(document.querySelectorAll('#step2 .option-card.selected')).map(el => el.getAttribute('data-value')),
+            goal: document.querySelector('#step3 .option-card.selected')?.getAttribute('data-value') || 'exam',
+            dailyTime: document.querySelector('#step4 .option-card.selected')?.getAttribute('data-value') || '1h'
+          };
+
+          await EduMindAPI.saveSurvey(surveyData);
+          if (window.EduMind && window.EduMind.toast) {
+            window.EduMind.toast.success('Đã lưu khảo sát vào Cơ sở dữ liệu!');
+          }
+          localStorage.setItem('edumind_survey', JSON.stringify(surveyData));
+
+          window.location.href = 'dashboard.html';
+        }
+      });
+
+      btnPrev.addEventListener('click', () => {
+        if (currentStep > 1) {
+          currentStep--;
+          updateUI();
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSurvey);
+    } else {
+      initSurvey();
+    }
+  </script>
+</body>
+</html>

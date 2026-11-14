@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập & Đăng ký — EduMind</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <main class="auth-page">
+    <!-- Left Showcase Side -->
+    <aside class="auth-brand-side">
+      <div class="brand-header">
+        <a href="index.html" class="brand-logo-link">
+          <div class="brand-logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+          </div>
+          <span>EduMind</span>
+        </a>
+      </div>
+
+      <div class="brand-content">
+        <h1 class="brand-title">Học tập thông minh & Cá nhân hóa</h1>
+        <p class="brand-description">
+          Đăng nhập để tiếp tục lộ trình học tập, trò chuyện cùng Study Coach và luyện tập với các bộ đề trắc nghiệm tạo từ PDF.
+        </p>
+
+        <div class="brand-features">
+          <div class="brand-feature-item">
+            <div class="feature-check-icon">✓</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Gia sư Socratic 24/7</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">Gợi ý giải bài theo từng bước tư duy</div>
+            </div>
+          </div>
+          <div class="brand-feature-item">
+            <div class="feature-check-icon">✓</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Trích xuất Quiz từ tài liệu PDF</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">Tạo đề thi đa dạng kèm giải thích chi tiết</div>
+            </div>
+          </div>
+          <div class="brand-feature-item">
+            <div class="feature-check-icon">✓</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Chẩn đoán lỗ hổng kiến thức</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">Báo cáo tiến độ và dự đoán kết quả thi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 0.8rem; color: var(--text-dim);">
+        © 2026 EduMind. Tất cả quyền được bảo lưu.
+      </div>
+    </aside>
+
+    <!-- Right Form Side -->
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div class="auth-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <h2 class="auth-title" id="authTitle">Chào mừng trở lại</h2>
+            <p class="auth-subtitle" id="authSubtitle">Nhập thông tin tài khoản để tiếp tục</p>
+          </div>
+          <button type="button" class="btn-theme-toggle" data-action="toggle-theme" title="Chuyển chế độ sáng/tối" aria-label="Chuyển chế độ sáng/tối"></button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab-btn active" id="tabLogin">Đăng nhập</button>
+          <button type="button" class="auth-tab-btn" id="tabRegister">Đăng ký</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" value="student@edumind.vn" required>
+          </div>
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem;">
+              <label class="form-label" for="loginPassword" style="margin-bottom: 0;">Mật khẩu</label>
+              <a href="#" style="font-size: 0.78rem; color: var(--primary-light);">Quên mật khẩu?</a>
+            </div>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" value="12345678" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Đăng nhập</button>
+        </form>
+
+        <!-- Register Form (hidden by default) -->
+        <form id="registerForm" style="display: none;">
+          <div class="form-group">
+            <label class="form-label" for="regName">Họ và tên</label>
+            <input type="text" id="regName" class="form-control" placeholder="Nguyễn Văn A" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Mật khẩu</label>
+            <input type="password" id="regPassword" class="form-control" placeholder="Tối thiểu 8 ký tự" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Tạo tài khoản</button>
+        </form>
+
+        <div class="auth-divider">hoặc tiếp tục với</div>
+
+        <div class="social-btns">
+          <button type="button" class="btn-social" id="btnGoogleLogin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10 0-.67-.07-1.32-.19-1.95H12v3.7h5.66c-.24 1.29-1 2.38-2.11 3.12v2.58h3.42c2-1.84 3.15-4.56 3.15-7.75 0-.54-.05-1.07-.12-1.7H12V2z"/>
+            </svg>
+            Google
+          </button>
+          <button type="button" class="btn-social" id="btnDemoLogin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            Tài khoản mẫu
+          </button>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center; font-size: 0.82rem; color: var(--text-dim);">
+          <a href="index.html" style="color: var(--text-muted);">← Quay lại trang chủ</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    (function () {
+      // 1. API endpoint detection (supports both http://localhost:8080 and file://)
+      const API_BASE = (window.location && window.location.protocol.startsWith('http')) ? '' : 'http://localhost:8080';
+
+      // 2. DOM Elements
+      const tabLogin = document.getElementById('tabLogin');
+      const tabRegister = document.getElementById('tabRegister');
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      const authTitle = document.getElementById('authTitle');
+      const authSubtitle = document.getElementById('authSubtitle');
+      const btnGoogleLogin = document.getElementById('btnGoogleLogin');
+      const btnDemoLogin = document.getElementById('btnDemoLogin');
+
+      // 3. Tab Switcher
+      function switchTab(mode) {
+        if (mode === 'register') {
+          tabRegister.classList.add('active');
+          tabLogin.classList.remove('active');
+          loginForm.style.display = 'none';
+          registerForm.style.display = 'block';
+          authTitle.textContent = 'Tạo tài khoản mới';
+          authSubtitle.textContent = 'Bắt đầu hành trình học tập cá nhân hóa';
+        } else {
+          tabLogin.classList.add('active');
+          tabRegister.classList.remove('active');
+          loginForm.style.display = 'block';
+          registerForm.style.display = 'none';
+          authTitle.textContent = 'Chào mừng trở lại';
+          authSubtitle.textContent = 'Nhập thông tin tài khoản để tiếp tục';
+        }
+      }
+
+      if (tabLogin) tabLogin.addEventListener('click', () => switchTab('login'));
+      if (tabRegister) tabRegister.addEventListener('click', () => switchTab('register'));
+
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('mode') === 'register') {
+        switchTab('register');
+      }
+
+      function showToast(msg, type = 'info') {
+        if (window.EduMind && window.EduMind.toast) {
+          if (type === 'success') window.EduMind.toast.success(msg);
+          else if (type === 'error') window.EduMind.toast.error(msg);
+          else window.EduMind.toast.info(msg);
+        } else {
+          alert(msg);
+        }
+      }
+
+      // 4. Login Submission
+      if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById('loginEmail');
+          const passInput = document.getElementById('loginPassword');
+          const email = (emailInput ? emailInput.value : '').trim();
+          const password = passInput ? passInput.value : '';
+
+          if (!email || !password) {
+            showToast('Vui lòng điền đầy đủ email và mật khẩu.', 'error');
+            return;
+          }
+
+          const btn = loginForm.querySelector('button[type="submit"]');
+          const origText = btn ? btn.textContent : 'Đăng nhập';
+          if (btn) {
+            btn.textContent = 'Đang xác thực...';
+            btn.disabled = true;
+          }
+
+          let loggedIn = false;
+          let userObj = null;
+
+          // Attempt 1: Call SQLite Backend API
+          try {
+            const res = await fetch(`${API_BASE}/api/auth/login`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, password })
+            });
+            const data = await res.json();
+            if (res.ok && data.success && data.user) {
+              loggedIn = true;
+              userObj = data.user;
+            } else if (data.error) {
+              // Server replied with specific error
+              console.warn('Backend login response:', data.error);
+            }
+          } catch (err) {
+            console.warn('Backend fetch failed, attempting local fallback:', err);
+          }
+
+          // Attempt 2: Optional Firebase auth if loaded
+          if (!loggedIn && window.EduMindFirebase && typeof window.EduMindFirebase.login === 'function') {
+            try {
+              const fbRes = await window.EduMindFirebase.login(email, password);
+              if (fbRes.success) {
+                loggedIn = true;
+                userObj = fbRes.user;
+              }
+            } catch (fbErr) {
+              console.warn('Firebase login attempt failed:', fbErr);
+            }
+          }
+
+          // Attempt 3: Local Offline / Seed Fallback
+          if (!loggedIn) {
+            const seedUsers = [
+              { email: 'student@edumind.vn', password: '12345678', id: 'usr_009', name: 'Học viên Demo', role: 'student', plan: 'Pro' },
+              { email: 'phi@example.com', password: '12345678', id: 'usr_001', name: 'Phi Le Minh', role: 'student', plan: 'Pro' },
+              { email: 'admin@edumind.ai', password: 'admin123', id: 'usr_008', name: 'Vũ Đức Thành', role: 'admin', plan: 'Pro' },
+              { email: 'long.nh@gmail.com', password: '12345678', id: 'usr_002', name: 'Nguyễn Hoàng Long', role: 'student', plan: 'Free' }
+            ];
+            const localUsers = JSON.parse(localStorage.getItem('edumind_registered_users') || '[]');
+            const allCandidates = [...seedUsers, ...localUsers];
+            const match = allCandidates.find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
+            if (match) {
+              loggedIn = true;
+              userObj = {
+                id: match.id || 'usr_' + Date.now(),
+                name: match.name || email.split('@')[0],
+                email: match.email,
+                role: match.role || 'student',
+                plan: match.plan || 'Pro'
+              };
+            }
+          }
+
+          if (loggedIn && userObj) {
+            localStorage.setItem('edumind_user', JSON.stringify(userObj));
+            showToast(`Đăng nhập thành công! Chào ${userObj.name}`, 'success');
+            setTimeout(() => {
+              window.location.href = userObj.role === 'admin' ? 'admin.html' : 'dashboard.html';
+            }, 400);
+          } else {
+            if (btn) {
+              btn.textContent = origText;
+              btn.disabled = false;
+            }
+            showToast('Email hoặc mật khẩu không chính xác. Thử "student@edumind.vn" / "12345678"', 'error');
+          }
+        });
+      }
+
+      // 5. Register Submission
+      if (registerForm) {
+        registerForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const nameInput = document.getElementById('regName');
+          const emailInput = document.getElementById('regEmail');
+          const passInput = document.getElementById('regPassword');
+          const name = (nameInput ? nameInput.value : '').trim();
+          const email = (emailInput ? emailInput.value : '').trim();
+          const password = passInput ? passInput.value : '';
+
+          if (!name || !email || !password) {
+            showToast('Vui lòng điền đầy đủ họ tên, email và mật khẩu.', 'error');
+            return;
+          }
+
+          if (password.length < 6) {
+            showToast('Mật khẩu cần tối thiểu 6 ký tự.', 'error');
+            return;
+          }
+
+          const btn = registerForm.querySelector('button[type="submit"]');
+          const origText = btn ? btn.textContent : 'Tạo tài khoản';
+          if (btn) {
+            btn.textContent = 'Đang tạo tài khoản...';
+            btn.disabled = true;
+          }
+
+          let registered = false;
+          let newUserObj = null;
+
+          // Attempt 1: Call SQLite Backend API
+          try {
+            const res = await fetch(`${API_BASE}/api/auth/register`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, email, password })
+            });
+            const data = await res.json();
+            if (res.ok && data.success && data.user) {
+              registered = true;
+              newUserObj = data.user;
+            }
+          } catch (err) {
+            console.warn('Backend register failed, saving locally:', err);
+          }
+
+          // Optional Firebase registration
+          if (window.EduMindFirebase && typeof window.EduMindFirebase.register === 'function') {
+            try {
+              await window.EduMindFirebase.register(email, password, name);
+            } catch (e) {}
+          }
+
+          // Local storage persistence
+          const localRecord = {
+            id: newUserObj ? newUserObj.id : 'usr_' + Date.now(),
+            name,
+            email,
+            password,
+            role: 'student',
+            plan: 'Free',
+            status: 'active',
+            streak: 1,
+            quizzes: 0
+          };
+
+          const localUsers = JSON.parse(localStorage.getItem('edumind_registered_users') || '[]');
+          localUsers.push(localRecord);
+          localStorage.setItem('edumind_registered_users', JSON.stringify(localUsers));
+
+          if (!newUserObj) {
+            newUserObj = localRecord;
+            registered = true;
+          }
+
+          localStorage.setItem('edumind_user', JSON.stringify(newUserObj));
+          showToast('Tạo tài khoản thành công! Đang chuyển đến khảo sát...', 'success');
+          setTimeout(() => {
+            window.location.href = 'survey.html';
+          }, 400);
+        });
+      }
+
+      // 6. Google Login Button
+      if (btnGoogleLogin) {
+        btnGoogleLogin.addEventListener('click', async () => {
+          const origContent = btnGoogleLogin.innerHTML;
+          btnGoogleLogin.disabled = true;
+          btnGoogleLogin.innerHTML = '<span>Đang kết nối...</span>';
+
+          if (window.EduMindFirebase && typeof window.EduMindFirebase.loginWithGoogle === 'function') {
+            try {
+              const res = await window.EduMindFirebase.loginWithGoogle();
+              if (res && res.success) {
+                showToast('Đăng nhập Google thành công!', 'success');
+                setTimeout(() => { window.location.href = 'dashboard.html'; }, 350);
+                return;
+              }
+            } catch (err) {
+              console.warn('Firebase Google Auth error:', err);
+            }
+          }
+
+          // Instant Demo Google Account
+          const googleUser = {
+            id: 'usr_gg_' + Date.now(),
+            name: 'Người dùng Google',
+            email: 'google.user@gmail.com',
+            role: 'student',
+            plan: 'Pro',
+            status: 'active'
+          };
+          localStorage.setItem('edumind_user', JSON.stringify(googleUser));
+          showToast('Đã đăng nhập thành công với tài khoản Google!', 'success');
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 350);
+        });
+      }
+
+      // 7. Demo Account Login Button
+      if (btnDemoLogin) {
+        btnDemoLogin.addEventListener('click', () => {
+          const demoUser = {
+            id: 'usr_001',
+            name: 'Phi Le Minh',
+            email: 'phi@example.com',
+            role: 'Lớp 12A1 • Học viên',
+            plan: 'Pro',
+            status: 'active'
+          };
+          localStorage.setItem('edumind_user', JSON.stringify(demoUser));
+          showToast('Đã đăng nhập tài khoản mẫu Phi Le Minh!', 'success');
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 300);
+        });
+      }
+
+      // 8. Try loading Firebase in background without blocking execution
+      if (window.location && window.location.protocol.startsWith('http')) {
+        import('./js/firebase.js').then(m => {
+          window.EduMindFirebase = m.default || m.EduMindFirebase || window.EduMindFirebase;
+        }).catch(() => {});
+      }
+    })();
+  </script>
+</body>
+</html>

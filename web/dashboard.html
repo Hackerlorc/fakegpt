@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tổng quan học tập — EduMind</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-layout">
+    
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ==========================================================================
+         SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="sidebar-brand">
+          <div class="sidebar-logo-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+          </div>
+          <span>EduMind</span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <span class="nav-section-title">Học tập</span>
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="dashboard.html" class="nav-link active">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                </span>
+                <span class="nav-text">Tổng quan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="coach.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M12 12a2 2 0 0 0 2-2"/></svg>
+                </span>
+                <span class="nav-text">Study Coach</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="quiz.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                </span>
+                <span class="nav-text">Quiz Maker</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="analytics.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                </span>
+                <span class="nav-text">Báo cáo</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-section-title">Hệ thống</span>
+          <ul class="nav-list">
+            <li class="nav-item" data-role="admin" style="display: none;">
+              <a href="admin.html" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <span class="nav-text">Quản lý tài khoản</span>
+                <span class="nav-badge">Admin</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                </span>
+                <span class="nav-text">Tài liệu</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <span class="nav-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </span>
+                <span class="nav-text">Cài đặt</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta-banner">
+          <div class="sidebar-cta-title">Phương pháp Socratic</div>
+          <p class="sidebar-cta-desc">Rèn luyện tư duy tự giải bài cùng Study Coach.</p>
+          <a href="coach.html" class="btn btn-secondary btn-sm" style="margin-top: 0.25rem;">Mở phòng học</a>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-preview">
+          <div class="user-avatar-circle">PL</div>
+          <div class="user-profile-info">
+            <span class="user-profile-name">Phi Le Minh</span>
+            <span class="user-profile-role">Lớp 12A1</span>
+          </div>
+        </div>
+        <a href="auth.html" class="user-profile-logout" title="Đăng xuất">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT
+         ========================================================================== -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <header class="app-header">
+        <div class="app-header-left">
+          <button class="sidebar-mobile-toggle" id="sidebarMobileToggle">☰</button>
+          <div class="greeting-wrapper">
+            <h1 class="greeting-title">Xin chào, Phi</h1>
+            <span class="greeting-subtitle">Hôm nay bạn có 2 bài tập cần hoàn thành.</span>
+          </div>
+        </div>
+
+        <div class="app-header-right">
+          <select id="userQuickSwitcher" class="form-control" style="width: auto; padding: 0.35rem 0.65rem; font-size: 0.8rem; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm);" title="Chuyển nhanh tài khoản để kiểm tra đồng bộ">
+            <option value="usr_001">Phi Le Minh (12 ngày • 47 bài)</option>
+            <option value="usr_009">Học viên Demo (7 ngày • 25 bài)</option>
+            <option value="usr_002">Nguyễn Hoàng Long (5 ngày • 18 bài)</option>
+            <option value="usr_004">Lê Quốc Bảo (8 ngày • 32 bài)</option>
+            <option value="usr_new">Tài khoản mới (1 ngày • 0 bài)</option>
+          </select>
+          <div class="search-input-group">
+            <span class="search-icon">🔍</span>
+            <input type="search" class="search-input" placeholder="Tìm bài học, quiz...">
+            <kbd class="search-kbd">Ctrl K</kbd>
+          </div>
+          <button type="button" class="btn-theme-toggle" data-action="toggle-theme" title="Chuyển chế độ sáng/tối" aria-label="Chuyển chế độ sáng/tối"></button>
+          <button class="notif-btn" title="Thông báo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notif-badge"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div style="padding: 2rem 0;">
+        <div class="dashboard-container">
+          
+          <!-- KPI Stats -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Chuỗi ngày học</span>
+                <span class="stat-value" id="dashKpiStreak">-- ngày</span>
+                <span class="stat-sub" id="dashKpiStreakSub">Mục tiêu: 7 ngày</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Bài quiz hoàn thành</span>
+                <span class="stat-value" id="dashKpiQuizzes">-- bài</span>
+                <span class="stat-sub" id="dashKpiQuizzesSub">Đang cập nhật...</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+                </svg>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Điểm trung bình</span>
+                <span class="stat-value" id="dashKpiAvgScore">-- / 10</span>
+                <span class="stat-sub" id="dashKpiAvgScoreSub">Đang tính toán...</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Thời gian hôm nay</span>
+                <span class="stat-value" id="dashKpiStudyTime">--</span>
+                <span class="stat-sub" id="dashKpiStudyTimeSub">Đang cập nhật...</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main 2-Column Grid -->
+          <div class="dashboard-grid">
+            
+            <!-- Left Column -->
+            <div class="dash-column">
+              <!-- Continue Study -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">Bài học tiếp theo</h3>
+                  <a href="coach.html" class="dash-card-link">Mở phòng học →</a>
+                </div>
+                <div class="continue-study-body">
+                  <div>
+                    <span class="lesson-badge" id="dashNextSubjectBadge">Toán học 10 • Đại số</span>
+                    <h4 class="lesson-title" id="dashNextLessonTitle">Phương trình bậc hai & Định lý Viète</h4>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.85rem;" id="dashNextLessonDesc">Bạn đã nắm vững cách tính biệt thức Δ, cần luyện thêm kỹ năng tìm tham số m.</p>
+                  </div>
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 0.35rem;">
+                      <span style="color: var(--text-dim);">Tiến độ chủ đề</span>
+                      <strong style="color: var(--text);" id="dashNextLessonProgressVal">65%</strong>
+                    </div>
+                    <div class="progress-track">
+                      <div class="progress-fill" id="dashNextLessonProgressBar" style="width: 65%;"></div>
+                    </div>
+                  </div>
+                  <div class="continue-actions">
+                    <a href="coach.html" class="btn btn-primary btn-sm">Tiếp tục giải bài</a>
+                    <a href="quiz.html" class="btn btn-secondary btn-sm">Làm quiz ôn tập</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Quizzes -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">Bài kiểm tra gần đây</h3>
+                  <a href="quiz.html" class="dash-card-link">Xem tất cả →</a>
+                </div>
+                <table class="quiz-table">
+                  <thead>
+                    <tr>
+                      <th>Tên đề</th>
+                      <th>Môn</th>
+                      <th>Điểm</th>
+                      <th>Ngày</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dashRecentQuizzesBody">
+                    <!-- Populated dynamically from Firestore -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="dash-column">
+              <!-- Weak Topics -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">Lỗ hổng kiến thức</h3>
+                  <a href="analytics.html" class="dash-card-link">Chi tiết →</a>
+                </div>
+                <div class="weak-topics-list" id="dashWeakTopicsList">
+                  <!-- Populated dynamically from Firestore -->
+                </div>
+                </div>
+              </div>
+
+              <!-- Weekly Schedule -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">Lịch học tuần này</h3>
+                  <span style="font-size: 0.75rem; color: var(--text-dim);" id="dashCalendarMonth">T11 - 2026</span>
+                </div>
+                <div class="weekly-calendar" id="dashWeeklyCalendar">
+                  <!-- Populated dynamically based on real calendar & user streak -->
+                </div>
+              </div>
+
+              <!-- Achievements -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">Huy hiệu đạt được</h3>
+                </div>
+                <div class="achievements-grid" id="dashAchievementsGrid">
+                  <!-- Populated dynamically based on user accomplishments -->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+  <script type="module">
+    import { EduMindAPI } from './js/api.js';
+    import { EduMindFirebase } from './js/firebase.js';
+
+    async function initDashboard(targetUserId = null) {
+      // 1. Listen to User Auth state & Personalized Greeting
+      let localUser = JSON.parse(localStorage.getItem('edumind_user') || 'null');
+      
+      if (targetUserId) {
+        // Switch account preset for previewing sync
+        const presets = {
+          'usr_001': { id: 'usr_001', name: 'Phi Le Minh', email: 'phi@example.com', role: 'student', plan: 'Pro', streak: 12, quizzes: 47 },
+          'usr_009': { id: 'usr_009', name: 'Học viên Demo', email: 'student@edumind.vn', role: 'student', plan: 'Pro', streak: 7, quizzes: 25 },
+          'usr_002': { id: 'usr_002', name: 'Nguyễn Hoàng Long', email: 'long.nh@gmail.com', role: 'student', plan: 'Free', streak: 5, quizzes: 18 },
+          'usr_004': { id: 'usr_004', name: 'Lê Quốc Bảo', email: 'bao.le@outlook.com', role: 'student', plan: 'Pro', streak: 8, quizzes: 32 },
+          'usr_new': { id: 'usr_new', name: 'Học viên Mới', email: 'newbie@edumind.vn', role: 'student', plan: 'Free', streak: 1, quizzes: 0 }
+        };
+        localUser = presets[targetUserId] || localUser;
+        localStorage.setItem('edumind_user', JSON.stringify(localUser));
+        if (window.EduMind && window.EduMind.auth) {
+          window.EduMind.auth.syncUI(localUser);
+        }
+      }
+
+      const userId = localUser ? (localUser.id || localUser.email) : 'usr_001';
+
+      // Update switcher dropdown selection
+      const switcher = document.getElementById('userQuickSwitcher');
+      if (switcher) {
+        if (userId === 'usr_001' || userId === 'phi@example.com') switcher.value = 'usr_001';
+        else if (userId === 'usr_009' || userId === 'student@edumind.vn') switcher.value = 'usr_009';
+        else if (userId === 'usr_002') switcher.value = 'usr_002';
+        else if (userId === 'usr_004') switcher.value = 'usr_004';
+        else switcher.value = 'usr_new';
+
+        if (!switcher.dataset.bound) {
+          switcher.dataset.bound = 'true';
+          switcher.addEventListener('change', (e) => {
+            initDashboard(e.target.value);
+            if (window.EduMind && window.EduMind.toast) {
+              window.EduMind.toast.info(`Đã chuyển sang tài khoản: ${switcher.options[switcher.selectedIndex].text}`);
+            }
+          });
+        }
+      }
+
+      if (localUser) {
+        const fullName = localUser.name || localUser.email.split('@')[0];
+        const greetingEl = document.querySelector('.greeting-title');
+        if (greetingEl) greetingEl.textContent = `Xin chào, ${fullName}`;
+
+        const subEl = document.querySelector('.greeting-subtitle');
+        if (subEl) {
+          const streak = localUser.streak || 1;
+          subEl.textContent = streak > 1 
+            ? `Tuyệt vời! Bạn đang duy trì chuỗi học ${streak} ngày liên tiếp.` 
+            : 'Chào mừng bạn! Hãy hoàn thành bài quiz đầu tiên hôm nay.';
+        }
+      }
+
+      // 2. Load Personalized KPI Stats from SQLite
+      async function loadUserStats() {
+        let stats = null;
+        try {
+          stats = await EduMindAPI.getUserStats(userId);
+        } catch (e) {
+          console.warn('Cannot fetch user stats:', e);
+        }
+
+        // Fallback calculation directly from localUser
+        if (!stats && localUser) {
+          const streak = localUser.streak || 1;
+          const quizzes = localUser.quizzes || 0;
+          const avg = quizzes > 0 ? 8.2 : 0;
+          stats = {
+            streakText: `${streak} ngày`,
+            streakSub: `Mục tiêu: ${Math.max(streak + 2, 7)} ngày`,
+            quizzesText: `${quizzes} bài`,
+            quizzesSub: quizzes > 0 ? `+${Math.min(quizzes, 5)} bài trong tuần này` : 'Chưa có bài kiểm tra',
+            avgScoreText: avg > 0 ? `${avg} / 10` : 'Chưa có điểm',
+            avgScoreSub: avg > 0 ? '+0.4 so với tuần trước' : 'Làm bài để tính điểm',
+            studyTime: quizzes >= 20 ? '1h 25m' : (quizzes > 0 ? '30m' : '0m'),
+            studyTimeSub: quizzes > 0 ? 'Đang duy trì tốt' : 'Chưa học hôm nay'
+          };
+        }
+
+        if (stats) {
+          const elStreak = document.getElementById('dashKpiStreak');
+          const elStreakSub = document.getElementById('dashKpiStreakSub');
+          const elQuizzes = document.getElementById('dashKpiQuizzes');
+          const elQuizzesSub = document.getElementById('dashKpiQuizzesSub');
+          const elAvg = document.getElementById('dashKpiAvgScore');
+          const elAvgSub = document.getElementById('dashKpiAvgScoreSub');
+          const elTime = document.getElementById('dashKpiStudyTime');
+          const elTimeSub = document.getElementById('dashKpiStudyTimeSub');
+
+          if (elStreak) elStreak.textContent = stats.streakText;
+          if (elStreakSub) elStreakSub.textContent = stats.streakSub;
+          if (elQuizzes) elQuizzes.textContent = stats.quizzesText;
+          if (elQuizzesSub) elQuizzesSub.textContent = stats.quizzesSub;
+          if (elAvg) elAvg.textContent = stats.avgScoreText;
+          if (elAvgSub) elAvgSub.textContent = stats.avgScoreSub;
+          if (elTime) elTime.textContent = stats.studyTime;
+          if (elTimeSub) elTimeSub.textContent = stats.studyTimeSub;
+        }
+      }
+
+      // 3. Load Active Roadmap from SQLite Database
+      async function loadRoadmap() {
+        const roadmap = await EduMindAPI.getRoadmap(userId);
+        if (roadmap) {
+          document.getElementById('dashNextSubjectBadge').textContent = roadmap.subject || 'Lộ trình học tập';
+          document.getElementById('dashNextLessonTitle').textContent = roadmap.currentLesson || 'Chủ đề trọng tâm';
+          document.getElementById('dashNextLessonDesc').textContent = roadmap.summary || 'Tiếp tục luyện tập cùng AI Study Coach.';
+          const progressVal = roadmap.progressPercent || 65;
+          document.getElementById('dashNextLessonProgressVal').textContent = `${progressVal}%`;
+          document.getElementById('dashNextLessonProgressBar').style.width = `${progressVal}%`;
+        }
+      }
+
+      // 4. Load Recent Quiz Attempts from SQLite Database
+      async function loadRecentQuizzes() {
+        const attempts = await EduMindAPI.getQuizAttempts(userId);
+        const tbody = document.getElementById('dashRecentQuizzesBody');
+        if (!tbody) return;
+
+        if (attempts && attempts.length > 0) {
+          tbody.innerHTML = '';
+          const recentList = attempts.slice(0, 4);
+          recentList.forEach(att => {
+            const tr = document.createElement('tr');
+            const scoreNum = parseFloat(att.score) || 0;
+            let scoreClass = 'score-high';
+            if (scoreNum < 6.5) scoreClass = 'score-low';
+            else if (scoreNum < 8.0) scoreClass = 'score-med';
+
+            tr.innerHTML = `
+              <td style="font-weight: 500;">${att.title}</td>
+              <td style="color: var(--text-dim);">${att.subject}</td>
+              <td><span class="score-badge ${scoreClass}">${scoreNum.toFixed(1)}</span></td>
+              <td style="color: var(--text-dim);">${att.completed_at || att.completedAt || 'Hôm nay'}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        } else {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="4" style="text-align: center; color: var(--text-dim); padding: 1.5rem;">
+                Bạn chưa hoàn thành bài kiểm tra nào. <a href="quiz.html" style="color: var(--primary-light);">Tạo bài quiz đầu tiên →</a>
+              </td>
+            </tr>
+          `;
+        }
+      }
+
+      // 5. Load Weak Topics (Knowledge Gaps) from SQLite Database
+      async function loadWeakTopics() {
+        const gaps = await EduMindAPI.getKnowledgeGaps(userId);
+        const container = document.getElementById('dashWeakTopicsList');
+        if (!container) return;
+
+        if (gaps && gaps.length > 0) {
+          container.innerHTML = '';
+          gaps.slice(0, 3).forEach(g => {
+            const item = document.createElement('div');
+            item.className = 'weak-topic-item';
+            const pct = g.accuracyPercent || g.accuracy_percent || 35;
+            let barColor = 'var(--danger)';
+            if (pct >= 50) barColor = 'var(--warning)';
+
+            item.innerHTML = `
+              <div class="weak-topic-header">
+                <span class="weak-topic-name">${g.topic}</span>
+                <span class="weak-topic-val" style="color: ${pct >= 50 ? 'var(--warning-light)' : 'var(--danger-light)'};">${pct}%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: ${pct}%; background-color: ${barColor};"></div>
+              </div>
+            `;
+            container.appendChild(item);
+          });
+        } else {
+          container.innerHTML = `
+            <div style="text-align: center; padding: 2rem 1rem; color: var(--text-dim); font-size: 0.85rem;">
+              <span style="font-size: 1.6rem; display: block; margin-bottom: 0.4rem;">🎉</span>
+              Chưa ghi nhận lỗ hổng kiến thức nào.<br>
+              <span style="font-size: 0.78rem;">Làm bài trắc nghiệm để AI phân tích và chẩn đoán điểm yếu.</span>
+            </div>
+          `;
+        }
+      }
+
+      // 6. Dynamic Weekly Schedule based on real calendar & user streak
+      function loadWeeklySchedule(streak) {
+        const calContainer = document.getElementById('dashWeeklyCalendar');
+        const monthEl = document.getElementById('dashCalendarMonth');
+        if (!calContainer) return;
+
+        const now = new Date();
+        if (monthEl) {
+          monthEl.textContent = `T${now.getMonth() + 1} - ${now.getFullYear()}`;
+        }
+
+        const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday...
+        const diffToMonday = (dayOfWeek === 0 ? -6 : 1) - dayOfWeek;
+        const monday = new Date(now);
+        monday.setDate(now.getDate() + diffToMonday);
+
+        const dayLabels = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+        calContainer.innerHTML = '';
+
+        const currentDayIdx = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+
+        for (let i = 0; i < 7; i++) {
+          const d = new Date(monday);
+          d.setDate(monday.getDate() + i);
+          const isToday = i === currentDayIdx;
+          const isPastOrToday = i <= currentDayIdx;
+          const isActive = isPastOrToday && ((currentDayIdx - i) < streak);
+
+          const col = document.createElement('div');
+          col.className = `calendar-day-col ${isToday ? 'today' : ''}`;
+          col.innerHTML = `
+            <span class="day-label" style="${isToday ? 'color: var(--primary-light); font-weight: 700;' : ''}">${dayLabels[i]}</span>
+            <span class="day-date">${d.getDate()}</span>
+            <span class="day-dot ${isActive ? 'active' : ''}"></span>
+          `;
+          calContainer.appendChild(col);
+        }
+      }
+
+      // 7. Dynamic Achievements Unlocking
+      function loadAchievements(streak, quizzes, avgScore) {
+        const grid = document.getElementById('dashAchievementsGrid');
+        if (!grid) return;
+
+        grid.innerHTML = '';
+
+        const badgeList = [
+          {
+            icon: '🔥',
+            title: streak >= 10 ? '10 ngày streak' : (streak >= 5 ? '5 ngày streak' : (streak >= 1 ? 'Khởi đầu mới' : 'Chưa mở khóa')),
+            unlocked: streak >= 1
+          },
+          {
+            icon: '✓',
+            title: quizzes >= 20 ? 'Quiz Master' : (quizzes >= 5 ? 'Thợ giải đề' : (quizzes >= 1 ? 'Tân binh' : 'Cần 1 bài quiz')),
+            unlocked: quizzes >= 1
+          },
+          {
+            icon: '★',
+            title: avgScore >= 8.0 ? 'Thủ khoa' : (quizzes >= 10 ? 'Chăm chỉ' : (quizzes > 0 ? 'Tích cực' : 'Chưa có điểm')),
+            unlocked: avgScore >= 6.0 || quizzes >= 5
+          }
+        ];
+
+        badgeList.forEach(b => {
+          const item = document.createElement('div');
+          item.className = 'achievement-item';
+          if (!b.unlocked) {
+            item.style.opacity = '0.4';
+            item.style.filter = 'grayscale(1)';
+          }
+          item.innerHTML = `
+            <div class="achievement-icon">${b.unlocked ? b.icon : '🔒'}</div>
+            <span class="achievement-title">${b.title}</span>
+          `;
+          grid.appendChild(item);
+        });
+      }
+
+      // Run all Database loaders in parallel
+      await Promise.all([
+        loadUserStats(),
+        loadRoadmap(),
+        loadRecentQuizzes(),
+        loadWeakTopics()
+      ]);
+
+      // Populate schedule and badges after stats are fetched
+      const currentStreak = parseInt(document.getElementById('dashKpiStreak')?.textContent) || (localUser?.streak || 1);
+      const currentQuizzes = parseInt(document.getElementById('dashKpiQuizzes')?.textContent) || (localUser?.quizzes || 0);
+      const currentAvg = parseFloat(document.getElementById('dashKpiAvgScore')?.textContent) || 0;
+      loadWeeklySchedule(currentStreak);
+      loadAchievements(currentStreak, currentQuizzes, currentAvg);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDashboard);
+    } else {
+      initDashboard();
+    }
+  </script>
+</body>
+</html>
